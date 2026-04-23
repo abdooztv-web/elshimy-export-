@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQs | El-Shimy Egyptian Agricultural Exporter</title>
+  <meta name="description" content="Frequently asked questions about exporting Egyptian produce with El-Shimy — covering certifications, logistics, pricing, minimum orders, and the export process." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── FAQ PAGE ── */
+
+    #faqs { padding: 100px 0; background: var(--white); }
+    .faq-layout { display: grid; grid-template-columns: 260px 1fr; gap: 64px; align-items: start; }
+    @media (max-width: 900px) { .faq-layout { grid-template-columns: 1fr; gap: 40px; } }
+
+    /* Category sidebar */
+    .faq-sidebar { position: sticky; top: 100px; }
+    .faq-sidebar h4 { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--neutral-dim); margin-bottom: 16px; }
+    .faq-cat-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .faq-cat-list li a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px; border-radius: var(--radius-md);
+      font-size: 14px; font-weight: 600; color: var(--neutral-dim);
+      text-decoration: none; transition: all .2s;
+    }
+    .faq-cat-list li a:hover,
+    .faq-cat-list li a.active { background: var(--tertiary); color: var(--secondary); }
+    .faq-cat-list li a .material-symbols-outlined { font-size: 18px; color: var(--primary-dark); }
+
+    /* FAQ groups */
+    .faq-group { margin-bottom: 64px; }
+    .faq-group:last-child { margin-bottom: 0; }
+    .faq-group-title { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; padding-bottom: 16px; border-bottom: 2px solid rgba(45,80,39,.1); }
+    .faq-group-icon { width: 44px; height: 44px; background: var(--primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--neutral); flex-shrink: 0; }
+    .faq-group-title h3 { color: var(--secondary); font-size: 20px; }
+
+    /* Accordion */
+    .faq-item { border: 1px solid rgba(45,80,39,.1); border-radius: var(--radius-lg); margin-bottom: 12px; overflow: hidden; transition: box-shadow .2s; }
+    .faq-item:hover { box-shadow: var(--shadow-sm); }
+    .faq-item.open { box-shadow: var(--shadow-md); border-color: rgba(45,80,39,.2); }
+    .faq-question {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 20px 24px; cursor: pointer; background: var(--white);
+      font-size: 16px; font-weight: 600; color: var(--secondary);
+      list-style: none; user-select: none;
+    }
+    .faq-question:hover { background: var(--tertiary); }
+    .faq-item.open .faq-question { background: var(--tertiary); }
+    .faq-chevron { font-size: 20px; color: var(--primary-dark); transition: transform .3s; flex-shrink: 0; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s ease; padding: 0 24px; background: var(--white); }
+    .faq-item.open .faq-answer { max-height: 600px; padding: 0 24px 24px; }
+    .faq-answer p { color: var(--neutral-dim); font-size: 15px; line-height: 1.8; margin-bottom: 12px; }
+    .faq-answer p:last-child { margin-bottom: 0; }
+    .faq-answer ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .faq-answer ul li { display: flex; gap: 8px; font-size: 15px; color: var(--neutral-dim); }
+    .faq-answer ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); flex-shrink: 0; margin-top: 8px; }
+    .faq-answer a { color: var(--primary-dark); font-weight: 600; }
+
+    /* 3D CTA card */
+    #faq-cta { padding: 100px 0; background: var(--tertiary); }
+    .faq-cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    @media (max-width: 700px) { .faq-cta-grid { grid-template-columns: 1fr; } }
+    .faq-cta-card {
+      padding: 48px; border-radius: var(--radius-xl);
+      transition: all .2s; cursor: default;
+    }
+    .faq-cta-card.dark  { background: var(--secondary); }
+    .faq-cta-card.light { background: var(--white); border: 1px solid rgba(45,80,39,.1); }
+    .faq-cta-card .cta-icon { font-size: 40px; margin-bottom: 20px; display: block; }
+    .faq-cta-card.dark  .cta-icon { color: var(--primary); }
+    .faq-cta-card.light .cta-icon { color: var(--secondary); }
+    .faq-cta-card.dark  h3 { color: var(--white); margin-bottom: 12px; }
+    .faq-cta-card.light h3 { color: var(--secondary); margin-bottom: 12px; }
+    .faq-cta-card.dark  p  { color: rgba(255,255,255,.7); margin-bottom: 28px; }
+    .faq-cta-card.light p  { margin-bottom: 28px; }
+
+    /* ── FAQs Mobile ── */
+    @media (max-width: 900px) {
+      .faq-sidebar { position: static; }
+    }
+    @media (max-width: 600px) {
+      .faq-item-q { font-size: 15px; }
+      .faq-cta-grid .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><img src="logo/1.png" alt="El-Shimy" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="faqs.html" class="active">FAQs</a></li>
+      <li><a href="blogs.html">Blog</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="https://wa.me/201000000000?text=Hello%2C%20I%27m%20interested%20in%20El-Shimy%20products" target="_blank" rel="noopener" class="btn btn-wa btn-sm"><span class="material-symbols-outlined" style="font-size:16px">chat</span> WhatsApp</a>
+      <a href="index.html#quote" class="btn btn-primary btn-sm">Get a Quote</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="index.html" class="mobile-link">Home</a></li>
+    <li><a href="about.html" class="mobile-link">About</a></li>
+    <li><a href="products.html" class="mobile-link">Products</a></li>
+    <li><a href="faqs.html" class="mobile-link">FAQs</a></li>
+    <li><a href="blogs.html" class="mobile-link">Blog</a></li>
+  </ul>
+  <div class="mobile-btns">
+    <a href="https://wa.me/201000000000" target="_blank" rel="noopener" class="btn btn-wa mobile-link"><span class="material-symbols-outlined" style="font-size:18px">chat</span> WhatsApp Us</a>
+    <a href="index.html#quote" class="btn btn-primary mobile-link">Get a Quote</a>
+  </div>
+</div>
+
+<header class="page-hero">
+  <div class="page-hero-bg" style="--bg-img: url('https://images.unsplash.com/photo-1560493676-04071c5f467b?w=1600&q=70')"></div>
+  <div class="container page-hero-content">
+    <div class="page-hero-breadcrumb"><a href="index.html">Home</a><span class="material-symbols-outlined" style="font-size:16px">chevron_right</span>FAQs</div>
+    <span class="section-label" style="color:var(--primary)">Questions & Answers</span>
+    <h1>Frequently Asked<br>Questions</h1>
+    <p class="lead">Everything you need to know about exporting Egyptian produce with El-Shimy — from your first inquiry to delivery at your warehouse.</p>
+  </div>
+</header>
+
+<section id="faqs">
+  <div class="container">
+    <div class="faq-layout">
+
+      <!-- Sidebar -->
+      <div class="faq-sidebar fade-in">
+        <h4>Categories</h4>
+        <ul class="faq-cat-list">
+          <li><a href="#getting-started" class="active"><span class="material-symbols-outlined">play_circle</span> Getting Started</a></li>
+          <li><a href="#products-quality"><span class="material-symbols-outlined">star</span> Products & Quality</a></li>
+          <li><a href="#logistics"><span class="material-symbols-outlined">local_shipping</span> Logistics</a></li>
+          <li><a href="#certifications-faq"><span class="material-symbols-outlined">verified</span> Certifications</a></li>
+          <li><a href="#pricing-payment"><span class="material-symbols-outlined">payments</span> Pricing & Payment</a></li>
+        </ul>
+      </div>
+
+      <!-- FAQ Content -->
+      <div class="faq-content fade-in fade-in-delay-1">
+
+        <!-- Getting Started -->
+        <div class="faq-group" id="getting-started">
+          <div class="faq-group-title">
+            <div class="faq-group-icon"><span class="material-symbols-outlined">play_circle</span></div>
+            <h3>Getting Started</h3>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">How do I get a quote from El-Shimy?<span class="faq-chevron material-symbols-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>Simply fill in our <a href="index.html#quote">online quote form</a> with your product, destination country, and quantity. We respond within 24 business hours with a competitive price. Alternatively, message us directly on <a href="https://wa.me/201000000000" target="_blank" rel="noopener">WhatsApp</a> for the fastest response.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">What is the minimum order quantity?<span class="faq-chevron material-symbols-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>Minimum order quantities depend on the product and destination. For most fresh produce we work with full pallet loads as a minimum for sea freight. For air freight, smaller quantities are available for premium markets. Contact us and we'll advise the most economical option for your volume.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Which countries does El-Shimy export to?<span class="faq-chevron material-symbols-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>We export to 85+ countries across:</p><ul><li>Europe — Germany, UK, Netherlands, France, Italy, Spain, and more</li><li>Gulf — UAE, Saudi Arabia, Kuwait, Qatar, Oman, Bahrain</li><li>Russia and the CIS countries</li><li>Asia — Singapore, Malaysia, China, Japan</li><li>Africa — and beyond</li></ul></div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Does El-Shimy also import produce into Egypt?<span class="faq-chevron material-symbols-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>Yes. Alongside our export operations, we manage strategic import of high-demand exotic fruits and essential produce into the Egyptian market. We handle sourcing, quality verification, customs clearance, and domestic distribution. Contact us to discuss your import needs.</p></div>
+          </div>
+        </div>
+
+        <!-- Products & Quality -->
+        <div class="faq-group" id="products-quality">
+          <div class="faq-group-title">
+            <div class="faq-group-icon"><span class="material-symbols-outlined">star</span></div>
+            <h3>Products &amp; Quality</h3>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">How many products does El-Shimy export?<span class="faq-chevron material-symbols-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>We export 16 certified fresh produce varieties across four seasons — Spring, Summer, Autumn, and Winter. This means we can offer continuous supply partnerships with year-round product variety. See our full <a href="products.html">Products page</a> or download our catalogue.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">What quality standards do your products meet?<span class="faq-chevron material-symbols-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>All El-Shimy produce is sourced from GlobalGAP-certified farms and complies with:</p><ul><li>EU Food Safety Regulations</li><li>HACCP (Hazard Analysis Critical Control Points)</li><li>International Phytosanitary Standards (IPPC)</li><li>Destination-specific import requirements</li></ul><p>We provide complete documentation for every shipment, with zero border rejections as our standard.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Can I request a product sample before placing an order?<span class="faq-chevron material-symbols-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>Yes. We can arrange sample shipments for qualified buyers. The cost of sampling is typically covered in the first commercial order. Contact our team via WhatsApp or email to arrange this — sample availability depends on the current season.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">What packaging options are available?<span class="faq-chevron material-seconds-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>Packaging varies by product but we offer standard industry cartons as well as custom branded packaging for established partners. Typical options include punnets (250g, 500g, 1kg), cartons (5kg, 10kg, 15kg, 18kg), and bulk sacks for root vegetables. Specific options are listed on each product card on our <a href="products.html">Products page</a>.</p></div>
+          </div>
+        </div>
+
+        <!-- Logistics -->
+        <div class="faq-group" id="logistics">
+          <div class="faq-group-title">
+            <div class="faq-group-icon"><span class="material-symbols-outlined">local_shipping</span></div>
+            <h3>Logistics &amp; Shipping</h3>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">What shipping methods does El-Shimy use?<span class="faq-chevron material-symbols-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>We use three main freight methods depending on the product and destination:</p><ul><li><strong>Sea freight</strong> — Refrigerated (reefer) containers for most bulk orders. Most cost-effective for large volumes.</li><li><strong>Air freight</strong> — For premium perishables or time-sensitive orders. Higher cost but preserves maximum freshness.</li><li><strong>Road freight</strong> — For regional and overland destinations.</li></ul></div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">How is the cold chain maintained during shipping?<span class="faq-chevron material-symbols-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>Cold chain integrity is a top priority. From harvest, produce is cooled to appropriate storage temperatures within hours. We use climate-controlled packing facilities, pre-cooled reefer containers, and partner with certified logistics providers. Temperature logs are available for every sea freight shipment.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">What are typical lead times from order to delivery?<span class="faq-chevron material-symbols-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>Lead times depend on destination and freight method:</p><ul><li>Gulf countries — 7–14 days (sea), 2–4 days (air)</li><li>Europe — 14–21 days (sea), 3–5 days (air)</li><li>Russia — 18–25 days (sea)</li><li>Asia — 20–30 days (sea)</li></ul><p>We provide tracking and regular updates throughout transit.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Who handles customs clearance at the destination?<span class="faq-chevron material-symbols-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>El-Shimy prepares all export documentation on the Egyptian side — phytosanitary certificates, health certificates, packing lists, bill of lading, and certificate of origin. For import customs at the destination, we work with your local customs broker or can recommend trusted partners in major markets. CIF and FOB terms are both available.</p></div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="faq-group" id="certifications-faq">
+          <div class="faq-group-title">
+            <div class="faq-group-icon"><span class="material-symbols-outlined">verified</span></div>
+            <h3>Certifications &amp; Compliance</h3>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Is El-Shimy GlobalGAP certified?<span class="faq-chevron material-symbols-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>Yes. We work exclusively with GlobalGAP-certified farms. This certification ensures that our agricultural practices meet internationally recognised standards for food safety, environmental sustainability, and worker welfare. Certification documentation is available on request for every product.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Are your products approved for the European Union market?<span class="faq-chevron material-symbols-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>Yes. We comply fully with EU food safety regulations, including maximum residue limits (MRL), phytosanitary requirements, and labelling standards. Our track record in the EU market includes zero border rejections. We are experienced in working with major European supermarket chains and distributors.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Can you supply organic certified produce?<span class="faq-chevron material-symbols-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>We have access to organic certified farms for select product lines. Availability depends on the season and product. Please specify your requirement when requesting a quote and we will confirm current availability and certification documentation.</p></div>
+          </div>
+        </div>
+
+        <!-- Pricing & Payment -->
+        <div class="faq-group" id="pricing-payment">
+          <div class="faq-group-title">
+            <div class="faq-group-icon"><span class="material-symbols-outlined">payments</span></div>
+            <h3>Pricing &amp; Payment</h3>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">How is pricing determined?<span class="faq-chevron material-symbols-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>Pricing is based on current market conditions, season, product variety, quantity, packaging specifications, and freight method. We provide transparent, competitive quotes. Volume buyers and long-term partners benefit from preferential pricing and priority allocation during peak season.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">What payment terms does El-Shimy accept?<span class="faq-chevron material-symbols-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>We work with standard international trade payment terms including:</p><ul><li>Letter of Credit (LC) — preferred for new partners</li><li>Telegraphic Transfer (TT) — wire transfer</li><li>Documentary Collection (CAD)</li></ul><p>Payment terms are discussed and agreed during the quotation process. For established partners, open account terms may be available.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Does El-Shimy offer long-term supply contracts?<span class="faq-chevron material-symbols-outlined">expand_more</span></div>
+            <div class="faq-answer"><p>Yes — we actively seek long-term supply partnerships. Annual or multi-season contracts offer volume price guarantees, priority farm allocation, and dedicated account management. We believe the best partnerships grow stronger over time. Contact us to discuss a supply agreement tailored to your business.</p></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section id="faq-cta" class="section-alt">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">Still Have Questions?</span>
+      <h2>We're Here to Help</h2>
+      <p>Our team is available to answer any question about products, logistics, certifications, or partnerships.</p>
+    </div>
+    <div class="faq-cta-grid fade-in">
+      <div class="faq-cta-card dark tilt-card">
+        <span class="cta-icon material-symbols-outlined">chat</span>
+        <h3>Chat on WhatsApp</h3>
+        <p>The fastest way to get answers. Our export team typically responds within the hour during business hours (Sat–Thu, 9am–6pm EET).</p>
+        <a href="https://wa.me/201000000000?text=Hello%20El-Shimy%2C%20I%20have%20a%20question%20about%20your%20export%20services" target="_blank" rel="noopener" class="btn btn-wa btn-lg"><span class="material-symbols-outlined" style="font-size:18px">chat</span> Open WhatsApp</a>
+      </div>
+      <div class="faq-cta-card light tilt-card">
+        <span class="cta-icon material-symbols-outlined">request_quote</span>
+        <h3>Request a Quote</h3>
+        <p>Ready to move forward? Fill in our quote form with your product and destination and we'll respond with full pricing and specifications within 24 hours.</p>
+        <a href="index.html#quote" class="btn btn-secondary btn-lg"><span class="material-symbols-outlined" style="font-size:18px">request_quote</span> Get a Free Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="logo/1.png" alt="El-Shimy" /></a>
+        <p>Egypt's premier agricultural exporter since 2016. Premium fresh fruits & vegetables delivered to 85+ countries worldwide.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><span class="material-symbols-outlined" style="font-size:18px">public</span></a>
+          <a href="#" aria-label="LinkedIn"><span class="material-symbols-outlined" style="font-size:18px">work</span></a>
+          <a href="#" aria-label="Instagram"><span class="material-symbols-outlined" style="font-size:18px">photo_camera</span></a>
+          <a href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="WhatsApp" class="wa-social"><span class="material-symbols-outlined" style="font-size:18px">chat</span></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="blogs.html">Blog</a></li></ul></div>
+      <div class="footer-col"><h4>Products</h4><ul><li><a href="products.html">Spring Harvest</a></li><li><a href="products.html">Summer Harvest</a></li><li><a href="products.html">Autumn Harvest</a></li><li><a href="products.html">Winter Harvest</a></li><li><a href="#" download>Product Catalogue PDF</a></li></ul></div>
+      <div class="footer-col"><h4>Business</h4><ul><li><a href="index.html#quote">Get a Free Quote</a></li><li><a href="about.html#certifications">Certifications</a></li><li><a href="blogs.html">Market Intelligence</a></li><li><a href="https://wa.me/201000000000" target="_blank" rel="noopener">WhatsApp Us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 El-Shimy for Trading & Agencies. Office 3, Mall 11, Beverly Hills, Giza, Egypt.</p>
+      <p><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/201000000000?text=Hello%20El-Shimy%2C%20I%27d%20like%20to%20inquire" target="_blank" rel="noopener" id="wa-float" aria-label="Chat on WhatsApp">
+  <span class="material-symbols-outlined" style="font-size:28px">chat</span>
+  <div class="wa-tooltip">Chat on WhatsApp</div>
+</a>
+<button id="scroll-top" aria-label="Scroll to top"><span class="material-symbols-outlined" style="font-size:20px">arrow_upward</span></button>
+<script src="shared.js"></script>
+</body>
+</html>

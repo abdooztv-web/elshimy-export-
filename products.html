@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | El-Shimy Egyptian Fruit & Vegetable Exports</title>
+  <meta name="description" content="Browse El-Shimy's complete seasonal export catalogue — 16 premium Egyptian fresh produce varieties across Spring, Summer, Autumn and Winter. Hover cards to see export details." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── PRODUCTS PAGE ── */
+
+    /* Season tabs */
+    #catalog { padding: 100px 0; background: var(--tertiary); }
+    .season-tabs { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px; }
+    .season-tab {
+      padding: 12px 28px; border-radius: var(--radius-full); font-size: 14px;
+      font-weight: 700; letter-spacing: .04em; cursor: pointer; transition: all .2s;
+      border: 2px solid transparent; background: var(--white); color: var(--neutral-dim);
+      font-family: 'Manrope', sans-serif;
+    }
+    .season-tab.active  { background: var(--secondary); color: var(--white); border-color: var(--secondary); }
+    .season-tab:hover:not(.active) { border-color: var(--secondary); color: var(--secondary); }
+
+    .season-panel { display: none; }
+    .season-panel.active { display: block; }
+
+    /* 3D Flip Cards grid */
+    .flip-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 28px; }
+    @media (max-width: 1100px) { .flip-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 600px)  { .flip-grid { grid-template-columns: 1fr; } }
+
+    .flip-card { height: 360px; }
+
+    /* Front face */
+    .flip-card-front { background: var(--white); border: 1px solid rgba(45,80,39,.08); }
+    .flip-front-img  { height: 230px; overflow: hidden; position: relative; }
+    .flip-front-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .flip-card:hover .flip-front-img img { transform: scale(1.06); }
+    .flip-front-badge { position: absolute; top: 12px; left: 12px; }
+    .flip-front-body  { padding: 18px 20px; }
+    .flip-front-body h4 { color: var(--secondary); font-size: 18px; margin-bottom: 4px; }
+    .flip-front-body .arabic { font-size: 13px; color: var(--neutral-dim); direction: rtl; }
+    .flip-front-body .flip-hint { font-size: 11px; color: var(--primary-dark); margin-top: 10px; font-weight: 600; letter-spacing: .05em; display: flex; align-items: center; gap: 4px; }
+
+    /* Back face */
+    .flip-card-back { background: var(--secondary); padding: 28px; }
+    .flip-back-title { color: var(--primary); font-size: 17px; font-weight: 700; margin-bottom: 16px; }
+    .flip-back-row   { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; color: rgba(255,255,255,.8); margin-bottom: 10px; line-height: 1.5; }
+    .flip-back-row .material-symbols-outlined { color: var(--primary); font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .flip-back-cta { margin-top: auto; padding-top: 16px; }
+    .flip-back-cta a { width: 100%; justify-content: center; font-size: 12px; padding: 12px; display: inline-flex; }
+
+    /* Season heading */
+    .season-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 36px; padding-bottom: 20px; border-bottom: 2px solid rgba(45,80,39,.12); }
+    .season-heading h3 { color: var(--secondary); font-size: 22px; }
+    .season-heading .season-badge { padding: 6px 18px; background: var(--primary); color: var(--neutral); border-radius: var(--radius-full); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+
+    /* Export process */
+    #process { padding: 100px 0; background: var(--white); }
+    .process-steps { display: grid; grid-template-columns: repeat(5,1fr); gap: 0; margin-top: 64px; position: relative; }
+    .process-steps::before { content: ''; position: absolute; top: 36px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, var(--primary), var(--secondary)); z-index: 0; }
+    @media (max-width: 900px) { .process-steps { grid-template-columns: 1fr 1fr; } .process-steps::before { display: none; } }
+    @media (max-width: 500px)  { .process-steps { grid-template-columns: 1fr; } }
+    .process-step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+    .process-step-num { width: 72px; height: 72px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 800; color: var(--neutral); margin: 0 auto 20px; box-shadow: 0 0 0 8px var(--tertiary), 0 0 0 10px rgba(154,218,68,.3); }
+    .process-step h4 { color: var(--secondary); font-size: 15px; margin-bottom: 8px; }
+    .process-step p  { font-size: 13px; }
+
+    /* 3D globe-style export map */
+    #export-map { padding: 100px 0; background: var(--secondary); overflow: hidden; }
+    .map-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    @media (max-width: 900px) { .map-inner { grid-template-columns: 1fr; } }
+    .map-text h2 { color: var(--white); margin-bottom: 20px; }
+    .map-text p  { color: rgba(255,255,255,.72); margin-bottom: 32px; }
+    .market-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .market-item { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius-md); transition: all .3s; }
+    .market-item:hover { background: rgba(255,255,255,.12); border-color: rgba(154,218,68,.3); }
+    .market-flag { font-size: 22px; }
+    .market-name { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.85); }
+
+    /* 3D globe visualization */
+    .globe-wrap { display: flex; align-items: center; justify-content: center; perspective: 900px; }
+    .globe {
+      width: 340px; height: 340px; border-radius: 50%; position: relative;
+      background: radial-gradient(circle at 35% 35%, rgba(154,218,68,.25), rgba(45,80,39,.6) 60%, rgba(14,26,12,0.85));
+      box-shadow:
+        inset -30px -20px 60px rgba(0,0,0,.5),
+        inset 20px 15px 40px rgba(154,218,68,.12),
+        0 0 80px rgba(154,218,68,.2),
+        0 0 160px rgba(154,218,68,.08);
+      animation: globe-spin 20s linear infinite;
+      transform-style: preserve-3d;
+    }
+    @keyframes globe-spin { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+    .globe-ring {
+      position: absolute; border-radius: 50%;
+      border: 1px solid rgba(154,218,68,.2);
+      top: 50%; left: 50%;
+      transform-style: preserve-3d;
+    }
+    .globe-ring-1 { width: 100%; height: 100%; margin: -50% 0 0 -50%; transform: rotateX(75deg); }
+    .globe-ring-2 { width: 80%;  height: 80%;  margin: -40% 0 0 -40%; transform: rotateX(60deg) rotateZ(30deg); }
+    .globe-ring-3 { width: 60%;  height: 60%;  margin: -30% 0 0 -30%; transform: rotateX(80deg) rotateZ(60deg); }
+    .globe-dot { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 10px var(--primary); animation: glow-pulse 2s ease-in-out infinite; }
+    .globe-dot:nth-child(1) { top: 25%; left: 28%; animation-delay: 0s; }
+    .globe-dot:nth-child(2) { top: 40%; left: 72%; animation-delay: .5s; }
+    .globe-dot:nth-child(3) { top: 60%; left: 55%; animation-delay: 1s; }
+    .globe-dot:nth-child(4) { top: 30%; left: 60%; animation-delay: 1.5s; }
+    .globe-dot:nth-child(5) { top: 70%; left: 30%; animation-delay: .8s; }
+
+    /* Catalogue CTA */
+    #catalogue-cta { padding: 80px 0; background: var(--tertiary); text-align: center; }
+    #catalogue-cta h2 { color: var(--secondary); margin-bottom: 16px; }
+    #catalogue-cta p  { max-width: 520px; margin: 0 auto 36px; }
+    .cat-cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── Products Mobile ── */
+    @media (max-width: 900px) {
+      .season-tabs { gap: 8px; }
+      .map-inner   { grid-template-columns: 1fr; gap: 48px; }
+      .market-list { grid-template-columns: 1fr; }
+      .globe-wrap  { display: none; }
+    }
+    @media (max-width: 600px) {
+      .season-heading { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .flip-back-row  { font-size: 12px; }
+      .cat-cta-btns .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><img src="logo/1.png" alt="El-Shimy" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="faqs.html">FAQs</a></li>
+      <li><a href="blogs.html">Blog</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="https://wa.me/201000000000?text=Hello%2C%20I%27m%20interested%20in%20El-Shimy%20products" target="_blank" rel="noopener" class="btn btn-wa btn-sm"><span class="material-symbols-outlined" style="font-size:16px">chat</span> WhatsApp</a>
+      <a href="index.html#quote" class="btn btn-primary btn-sm">Get a Quote</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="index.html" class="mobile-link">Home</a></li>
+    <li><a href="about.html" class="mobile-link">About</a></li>
+    <li><a href="products.html" class="mobile-link">Products</a></li>
+    <li><a href="faqs.html" class="mobile-link">FAQs</a></li>
+    <li><a href="blogs.html" class="mobile-link">Blog</a></li>
+  </ul>
+  <div class="mobile-btns">
+    <a href="https://wa.me/201000000000" target="_blank" rel="noopener" class="btn btn-wa mobile-link"><span class="material-symbols-outlined" style="font-size:18px">chat</span> WhatsApp Us</a>
+    <a href="index.html#quote" class="btn btn-primary mobile-link">Get a Quote</a>
+  </div>
+</div>
+
+<header class="page-hero">
+  <div class="page-hero-bg" style="--bg-img: url('https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=1600&q=70')"></div>
+  <div class="container page-hero-content">
+    <div class="page-hero-breadcrumb"><a href="index.html">Home</a><span class="material-symbols-outlined" style="font-size:16px">chevron_right</span>Products</div>
+    <span class="section-label" style="color:var(--primary)">Seasonal Catalogue</span>
+    <h1>Year-Round Premium<br>Egyptian Produce</h1>
+    <p class="lead">16 certified export products across 4 seasons — hover any card to see full export details, destination markets, and pricing enquiry. All GlobalGAP certified.</p>
+  </div>
+</header>
+
+<!-- Seasonal Flip Cards -->
+<section id="catalog">
+  <div class="container">
+    <div class="season-tabs fade-in">
+      <button class="season-tab active" data-season="spring">🌸 Spring</button>
+      <button class="season-tab" data-season="summer">☀️ Summer</button>
+      <button class="season-tab" data-season="autumn">🍂 Autumn</button>
+      <button class="season-tab" data-season="winter">❄️ Winter</button>
+    </div>
+
+    <!-- SPRING -->
+    <div class="season-panel active" id="panel-spring">
+      <div class="season-heading fade-in">
+        <div class="season-badge">Spring Harvest</div>
+        <h3>February – May · Hover cards for export details</h3>
+      </div>
+      <div class="flip-grid">
+
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-front-img"><img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=500&q=80" alt="Egyptian strawberries export"/><div class="flip-front-badge"><span class="label-tag label-tag-primary">Export Ready</span></div></div>
+              <div class="flip-front-body"><h4>Strawberries</h4><div class="arabic">الفراولة</div><div class="flip-hint"><span class="material-symbols-outlined" style="font-size:14px">flip</span> Hover for details</div></div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-title">Strawberries — Export Info</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">calendar_month</span> Season: February – May</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">public</span> Key Markets: Europe, Gulf, Russia</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">verified</span> GlobalGAP · HACCP · EU Phytosanitary</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">local_shipping</span> Sea & Air freight available</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">package_2</span> Packaging: 250g, 500g, 1kg punnets</div>
+              <div class="flip-back-cta"><a href="index.html#quote" class="btn btn-primary flip-back-cta">Request Pricing</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card fade-in fade-in-delay-1">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-front-img"><img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=500&q=80" alt="Egyptian guava export"/><div class="flip-front-badge"><span class="label-tag label-tag-primary">Export Ready</span></div></div>
+              <div class="flip-front-body"><h4>Guava</h4><div class="arabic">الجوافة</div><div class="flip-hint"><span class="material-symbols-outlined" style="font-size:14px">flip</span> Hover for details</div></div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-title">Guava — Export Info</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">calendar_month</span> Season: March – June</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">public</span> Key Markets: Gulf, Africa, Southeast Asia</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">verified</span> GlobalGAP · EU Phytosanitary</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">local_shipping</span> Sea freight · cold-chain</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">package_2</span> Packaging: 5kg / 10kg cartons</div>
+              <div class="flip-back-cta"><a href="index.html#quote" class="btn btn-primary">Request Pricing</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card fade-in fade-in-delay-2">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-front-img"><img src="https://images.unsplash.com/photo-1547514701-42782101795e?w=500&q=80" alt="Egyptian oranges export navel"/><div class="flip-front-badge"><span class="label-tag label-tag-primary">Export Ready</span></div></div>
+              <div class="flip-front-body"><h4>Oranges</h4><div class="arabic">البرتقال</div><div class="flip-hint"><span class="material-symbols-outlined" style="font-size:14px">flip</span> Hover for details</div></div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-title">Oranges — Export Info</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">calendar_month</span> Season: February – May</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">public</span> Key Markets: Europe, Russia, Gulf, China</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">verified</span> GlobalGAP · HACCP · EU Certified</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">local_shipping</span> Sea freight · reefer containers</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">package_2</span> Packaging: 15kg / 18kg cartons</div>
+              <div class="flip-back-cta"><a href="index.html#quote" class="btn btn-primary">Request Pricing</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card fade-in fade-in-delay-3">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-front-img"><img src="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?w=500&q=80" alt="Egyptian tomatoes export"/><div class="flip-front-badge"><span class="label-tag label-tag-primary">Export Ready</span></div></div>
+              <div class="flip-front-body"><h4>Tomatoes</h4><div class="arabic">الطماطم</div><div class="flip-hint"><span class="material-symbols-outlined" style="font-size:14px">flip</span> Hover for details</div></div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-title">Tomatoes — Export Info</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">calendar_month</span> Season: March – June</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">public</span> Key Markets: Europe, Gulf</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">verified</span> GlobalGAP · EU Phytosanitary</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">local_shipping</span> Air & sea freight</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">package_2</span> Packaging: 5kg / 10kg cartons</div>
+              <div class="flip-back-cta"><a href="index.html#quote" class="btn btn-primary">Request Pricing</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SUMMER -->
+    <div class="season-panel" id="panel-summer">
+      <div class="season-heading fade-in">
+        <div class="season-badge">Summer Harvest</div>
+        <h3>June – September · Hover cards for export details</h3>
+      </div>
+      <div class="flip-grid">
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-front-img"><img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500&q=80" alt="Egyptian watermelon export"/><div class="flip-front-badge"><span class="label-tag label-tag-primary">Export Ready</span></div></div>
+              <div class="flip-front-body"><h4>Watermelon</h4><div class="arabic">البطيخ</div><div class="flip-hint"><span class="material-symbols-outlined" style="font-size:14px">flip</span> Hover for details</div></div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-title">Watermelon — Export Info</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">calendar_month</span> Season: June – September</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">public</span> Key Markets: Europe, Gulf, Russia</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">verified</span> GlobalGAP · EU Phytosanitary</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">local_shipping</span> Sea freight · bulk or palletised</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">package_2</span> Packaging: Loose / 5–10kg net</div>
+              <div class="flip-back-cta"><a href="index.html#quote" class="btn btn-primary">Request Pricing</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card fade-in fade-in-delay-1">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-front-img"><img src="https://images.unsplash.com/photo-1571575173700-afb9492e6a50?w=500&q=80" alt="Egyptian melon export"/><div class="flip-front-badge"><span class="label-tag label-tag-primary">Export Ready</span></div></div>
+              <div class="flip-front-body"><h4>Melon</h4><div class="arabic">الشمام</div><div class="flip-hint"><span class="material-symbols-outlined" style="font-size:14px">flip</span> Hover for details</div></div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-title">Melon — Export Info</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">calendar_month</span> Season: June – August</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">public</span> Key Markets: Europe, Gulf</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">verified</span> GlobalGAP · EU Certified</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">local_shipping</span> Sea freight · reefer</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">package_2</span> Packaging: 5–8kg cartons</div>
+              <div class="flip-back-cta"><a href="index.html#quote" class="btn btn-primary">Request Pricing</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card fade-in fade-in-delay-2">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-front-img"><img src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=500&q=80" alt="Egyptian cucumbers export"/><div class="flip-front-badge"><span class="label-tag label-tag-primary">Export Ready</span></div></div>
+              <div class="flip-front-body"><h4>Cucumbers</h4><div class="arabic">الخيار</div><div class="flip-hint"><span class="material-symbols-outlined" style="font-size:14px">flip</span> Hover for details</div></div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-title">Cucumbers — Export Info</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">calendar_month</span> Season: May – August</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">public</span> Key Markets: Gulf, Europe</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">verified</span> GlobalGAP · EU Phytosanitary</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">local_shipping</span> Air & sea freight</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">package_2</span> Packaging: 5kg boxes</div>
+              <div class="flip-back-cta"><a href="index.html#quote" class="btn btn-primary">Request Pricing</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card fade-in fade-in-delay-3">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-front-img"><img src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=500&q=80" alt="Egyptian bell peppers export"/><div class="flip-front-badge"><span class="label-tag label-tag-primary">Export Ready</span></div></div>
+              <div class="flip-front-body"><h4>Bell Peppers</h4><div class="arabic">الفلفل</div><div class="flip-hint"><span class="material-symbols-outlined" style="font-size:14px">flip</span> Hover for details</div></div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-title">Bell Peppers — Export Info</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">calendar_month</span> Season: June – September</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">public</span> Key Markets: Europe, Gulf</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">verified</span> GlobalGAP · EU Certified</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">local_shipping</span> Air & sea freight</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">package_2</span> Packaging: 5kg cartons, colour-sorted</div>
+              <div class="flip-back-cta"><a href="index.html#quote" class="btn btn-primary">Request Pricing</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUTUMN -->
+    <div class="season-panel" id="panel-autumn">
+      <div class="season-heading fade-in">
+        <div class="season-badge">Autumn Harvest</div>
+        <h3>July – November · Hover cards for export details</h3>
+      </div>
+      <div class="flip-grid">
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-front-img"><img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=500&q=80" alt="Egyptian mango export"/><div class="flip-front-badge"><span class="label-tag label-tag-primary">Export Ready</span></div></div>
+              <div class="flip-front-body"><h4>Egyptian Mango</h4><div class="arabic">المانجو</div><div class="flip-hint"><span class="material-symbols-outlined" style="font-size:14px">flip</span> Hover for details</div></div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-title">Mango — Export Info</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">calendar_month</span> Season: July – October</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">public</span> Key Markets: Europe, Russia, Gulf, Asia</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">verified</span> GlobalGAP · EU Phytosanitary</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">local_shipping</span> Air & sea freight</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">package_2</span> Packaging: 4kg / 8kg cartons</div>
+              <div class="flip-back-cta"><a href="index.html#quote" class="btn btn-primary">Request Pricing</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card fade-in fade-in-delay-1">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-front-img"><img src="https://images.unsplash.com/photo-1595252129934-306a2a2c9ae3?w=500&q=80" alt="Egyptian peach export"/><div class="flip-front-badge"><span class="label-tag label-tag-primary">Export Ready</span></div></div>
+              <div class="flip-front-body"><h4>Peach</h4><div class="arabic">الخوخ</div><div class="flip-hint"><span class="material-symbols-outlined" style="font-size:14px">flip</span> Hover for details</div></div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-title">Peach — Export Info</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">calendar_month</span> Season: July – September</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">public</span> Key Markets: Gulf, Europe</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">verified</span> GlobalGAP · EU Certified</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">local_shipping</span> Air & sea freight</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">package_2</span> Packaging: 5kg cartons</div>
+              <div class="flip-back-cta"><a href="index.html#quote" class="btn btn-primary">Request Pricing</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card fade-in fade-in-delay-2">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-front-img"><img src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=500&q=80" alt="Egyptian table grapes export"/><div class="flip-front-badge"><span class="label-tag label-tag-primary">Export Ready</span></div></div>
+              <div class="flip-front-body"><h4>Table Grapes</h4><div class="arabic">العنب</div><div class="flip-hint"><span class="material-symbols-outlined" style="font-size:14px">flip</span> Hover for details</div></div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-title">Table Grapes — Export Info</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">calendar_month</span> Season: June – September</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">public</span> Key Markets: Europe, Russia, Gulf</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">verified</span> GlobalGAP · EU Certified</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">local_shipping</span> Sea freight · cold-chain</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">package_2</span> Packaging: 500g / 1kg punnets</div>
+              <div class="flip-back-cta"><a href="index.html#quote" class="btn btn-primary">Request Pricing</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card fade-in fade-in-delay-3">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-front-img"><img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=500&q=80" alt="Egyptian apple export"/><div class="flip-front-badge"><span class="label-tag label-tag-primary">Export Ready</span></div></div>
+              <div class="flip-front-body"><h4>Apple</h4><div class="arabic">التفاح</div><div class="flip-hint"><span class="material-symbols-outlined" style="font-size:14px">flip</span> Hover for details</div></div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-title">Apple — Export Info</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">calendar_month</span> Season: August – November</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">public</span> Key Markets: Gulf, Africa</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">verified</span> GlobalGAP · Phytosanitary</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">local_shipping</span> Sea freight · reefer</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">package_2</span> Packaging: 10kg / 15kg cartons</div>
+              <div class="flip-back-cta"><a href="index.html#quote" class="btn btn-primary">Request Pricing</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WINTER -->
+    <div class="season-panel" id="panel-winter">
+      <div class="season-heading fade-in">
+        <div class="season-badge">Winter Harvest</div>
+        <h3>November – March · Hover cards for export details</h3>
+      </div>
+      <div class="flip-grid">
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-front-img"><img src="https://images.unsplash.com/photo-1582979512210-99b6a53386f9?w=500&q=80" alt="Egyptian local oranges export"/><div class="flip-front-badge"><span class="label-tag label-tag-primary">Export Ready</span></div></div>
+              <div class="flip-front-body"><h4>Local Oranges</h4><div class="arabic">البرتقال البلدي</div><div class="flip-hint"><span class="material-symbols-outlined" style="font-size:14px">flip</span> Hover for details</div></div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-title">Local Oranges — Export Info</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">calendar_month</span> Season: November – February</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">public</span> Key Markets: Europe, Russia, Gulf</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">verified</span> GlobalGAP · EU Certified</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">local_shipping</span> Sea freight · reefer containers</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">package_2</span> Packaging: 15kg / 18kg cartons</div>
+              <div class="flip-back-cta"><a href="index.html#quote" class="btn btn-primary">Request Pricing</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card fade-in fade-in-delay-1">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-front-img"><img src="https://images.unsplash.com/photo-1597714026720-8f74c62310ba?w=500&q=80" alt="Egyptian mandarin export"/><div class="flip-front-badge"><span class="label-tag label-tag-primary">Export Ready</span></div></div>
+              <div class="flip-front-body"><h4>Mandarin</h4><div class="arabic">الماندرين</div><div class="flip-hint"><span class="material-symbols-outlined" style="font-size:14px">flip</span> Hover for details</div></div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-title">Mandarin — Export Info</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">calendar_month</span> Season: November – January</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">public</span> Key Markets: Russia, Europe, Gulf</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">verified</span> GlobalGAP · EU Phytosanitary</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">local_shipping</span> Sea freight · reefer</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">package_2</span> Packaging: 10kg / 15kg cartons</div>
+              <div class="flip-back-cta"><a href="index.html#quote" class="btn btn-primary">Request Pricing</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card fade-in fade-in-delay-2">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-front-img"><img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=500&q=80" alt="Egyptian carrot export"/><div class="flip-front-badge"><span class="label-tag label-tag-primary">Export Ready</span></div></div>
+              <div class="flip-front-body"><h4>Carrot</h4><div class="arabic">الجزر</div><div class="flip-hint"><span class="material-symbols-outlined" style="font-size:14px">flip</span> Hover for details</div></div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-title">Carrot — Export Info</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">calendar_month</span> Season: December – March</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">public</span> Key Markets: Gulf, Europe, Africa</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">verified</span> GlobalGAP · EU Certified</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">local_shipping</span> Sea freight</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">package_2</span> Packaging: 10kg / 20kg sacks</div>
+              <div class="flip-back-cta"><a href="index.html#quote" class="btn btn-primary">Request Pricing</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card fade-in fade-in-delay-3">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-front-img"><img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=500&q=80" alt="Egyptian potatoes export"/><div class="flip-front-badge"><span class="label-tag label-tag-primary">Export Ready</span></div></div>
+              <div class="flip-front-body"><h4>Potatoes</h4><div class="arabic">البطاطس</div><div class="flip-hint"><span class="material-symbols-outlined" style="font-size:14px">flip</span> Hover for details</div></div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-title">Potatoes — Export Info</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">calendar_month</span> Season: November – March</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">public</span> Key Markets: Europe, Gulf, Africa</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">verified</span> GlobalGAP · EU Phytosanitary</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">local_shipping</span> Sea freight · bulk or bagged</div>
+              <div class="flip-back-row"><span class="material-symbols-outlined">package_2</span> Packaging: 10kg / 25kg sacks</div>
+              <div class="flip-back-cta"><a href="index.html#quote" class="btn btn-primary">Request Pricing</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Export Process -->
+<section id="process">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">How It Works</span>
+      <h2>From Farm to Your Market in 5 Steps</h2>
+      <p>A seamless, transparent process from inquiry to delivery — every time.</p>
+    </div>
+    <div class="process-steps fade-in">
+      <div class="process-step">
+        <div class="process-step-num">1</div>
+        <h4>Inquiry &amp; Quote</h4>
+        <p>Send us your product, quantity, and destination. We respond within 24 hours with a competitive price.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">2</div>
+        <h4>Farm Selection</h4>
+        <p>We source from verified, GlobalGAP-certified farms in Nile Valley regions known for your product.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">3</div>
+        <h4>Harvest &amp; Pack</h4>
+        <p>Produce is harvested at peak quality, graded, and packed to your specifications.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">4</div>
+        <h4>Compliance &amp; Docs</h4>
+        <p>Full phytosanitary certificates, packing lists, customs documentation prepared for your market.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">5</div>
+        <h4>Delivery</h4>
+        <p>Cold-chain managed shipment via sea or air freight — tracked to your port or warehouse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3D Globe + Export Markets -->
+<section id="export-map" class="section-dark">
+  <div class="container">
+    <div class="map-inner">
+      <div class="map-text fade-in">
+        <span class="section-label">Global Reach</span>
+        <h2>85+ Countries, Every Continent</h2>
+        <p>From European supermarket chains to Gulf wholesalers, from Russian distributors to African retailers — El-Shimy reaches every corner of the globe.</p>
+        <div class="market-list">
+          <div class="market-item"><span class="market-flag">🇩🇪</span><span class="market-name">Germany</span></div>
+          <div class="market-item"><span class="market-flag">🇦🇪</span><span class="market-name">UAE</span></div>
+          <div class="market-item"><span class="market-flag">🇷🇺</span><span class="market-name">Russia</span></div>
+          <div class="market-item"><span class="market-flag">🇸🇦</span><span class="market-name">Saudi Arabia</span></div>
+          <div class="market-item"><span class="market-flag">🇳🇱</span><span class="market-name">Netherlands</span></div>
+          <div class="market-item"><span class="market-flag">🇬🇧</span><span class="market-name">United Kingdom</span></div>
+          <div class="market-item"><span class="market-flag">🇫🇷</span><span class="market-name">France</span></div>
+          <div class="market-item"><span class="market-flag">🇸🇬</span><span class="market-name">Singapore</span></div>
+        </div>
+        <br/>
+        <a href="index.html#quote" class="btn btn-primary btn-lg"><span class="material-symbols-outlined" style="font-size:18px">request_quote</span> Request Export Quote</a>
+      </div>
+      <div class="globe-wrap fade-in fade-in-delay-1">
+        <div class="globe">
+          <div class="globe-ring globe-ring-1"></div>
+          <div class="globe-ring globe-ring-2"></div>
+          <div class="globe-ring globe-ring-3"></div>
+          <div class="globe-dot"></div>
+          <div class="globe-dot"></div>
+          <div class="globe-dot"></div>
+          <div class="globe-dot"></div>
+          <div class="globe-dot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Catalogue CTA -->
+<section id="catalogue-cta">
+  <div class="container fade-in">
+    <span class="section-label">Download</span>
+    <h2>Get the Full Product Catalogue</h2>
+    <p>All 16 products, export specs, packaging options, and seasonal availability — in one PDF for your procurement team.</p>
+    <div class="cat-cta-btns">
+      <a href="#" class="btn btn-secondary btn-lg" download><span class="material-symbols-outlined" style="font-size:18px">download</span> Download Catalogue PDF</a>
+      <a href="https://wa.me/201000000000?text=Hello%20El-Shimy%2C%20I%27d%20like%20to%20receive%20your%20product%20catalogue" target="_blank" rel="noopener" class="btn btn-wa btn-lg"><span class="material-symbols-outlined" style="font-size:18px">chat</span> Request via WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="logo/1.png" alt="El-Shimy" /></a>
+        <p>Egypt's premier agricultural exporter since 2016. Premium fresh fruits & vegetables delivered to 85+ countries worldwide.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><span class="material-symbols-outlined" style="font-size:18px">public</span></a>
+          <a href="#" aria-label="LinkedIn"><span class="material-symbols-outlined" style="font-size:18px">work</span></a>
+          <a href="#" aria-label="Instagram"><span class="material-symbols-outlined" style="font-size:18px">photo_camera</span></a>
+          <a href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="WhatsApp" class="wa-social"><span class="material-symbols-outlined" style="font-size:18px">chat</span></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="blogs.html">Blog</a></li></ul></div>
+      <div class="footer-col"><h4>Products</h4><ul><li><a href="products.html">Spring Harvest</a></li><li><a href="products.html">Summer Harvest</a></li><li><a href="products.html">Autumn Harvest</a></li><li><a href="products.html">Winter Harvest</a></li><li><a href="#" download>Product Catalogue PDF</a></li></ul></div>
+      <div class="footer-col"><h4>Business</h4><ul><li><a href="index.html#quote">Get a Free Quote</a></li><li><a href="about.html#certifications">Certifications</a></li><li><a href="blogs.html">Market Intelligence</a></li><li><a href="https://wa.me/201000000000" target="_blank" rel="noopener">WhatsApp Us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 El-Shimy for Trading & Agencies. Office 3, Mall 11, Beverly Hills, Giza, Egypt.</p>
+      <p><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/201000000000?text=Hello%20El-Shimy%2C%20I%27d%20like%20to%20inquire" target="_blank" rel="noopener" id="wa-float" aria-label="Chat on WhatsApp">
+  <span class="material-symbols-outlined" style="font-size:28px">chat</span>
+  <div class="wa-tooltip">Chat on WhatsApp</div>
+</a>
+<button id="scroll-top" aria-label="Scroll to top"><span class="material-symbols-outlined" style="font-size:20px">arrow_upward</span></button>
+<script src="shared.js"></script>
+</body>
+</html>

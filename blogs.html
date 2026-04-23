@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Egyptian Agricultural Export Market Intelligence — El-Shimy</title>
+  <meta name="description" content="Market intelligence, seasonal harvest updates, and export insights from Egypt's agricultural industry — by the El-Shimy export team." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── BLOG PAGE ── */
+
+    /* Featured article */
+    #featured { padding: 100px 0; background: var(--white); }
+    .featured-card {
+      display: grid; grid-template-columns: 1fr 1fr; border-radius: var(--radius-xl);
+      overflow: hidden; box-shadow: var(--shadow-xl); border: 1px solid rgba(45,80,39,.08);
+      transition: transform .3s;
+    }
+    .featured-card:hover { transform: translateY(-4px); }
+    @media (max-width: 900px) { .featured-card { grid-template-columns: 1fr; } }
+    .featured-img { position: relative; min-height: 420px; overflow: hidden; }
+    @media (max-width: 900px) { .featured-img { min-height: 280px; } }
+    .featured-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+    .featured-card:hover .featured-img img { transform: scale(1.05); }
+    .featured-body { padding: 56px; background: var(--white); display: flex; flex-direction: column; justify-content: center; }
+    @media (max-width: 600px) { .featured-body { padding: 32px 24px; } }
+    .blog-tag { display: inline-block; padding: 4px 14px; background: rgba(154,218,68,.15); color: var(--primary-dark); border-radius: var(--radius-full); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px; }
+    .blog-meta { font-size: 13px; color: var(--neutral-dim); margin-bottom: 20px; display: flex; align-items: center; gap: 16px; }
+    .blog-meta span { display: flex; align-items: center; gap: 4px; }
+    .featured-body h2 { color: var(--secondary); font-size: clamp(22px, 2.5vw, 30px); margin-bottom: 16px; line-height: 1.3; }
+    .featured-body p  { margin-bottom: 28px; font-size: 16px; }
+    .read-more { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--secondary); text-decoration: none; letter-spacing: .04em; transition: gap .2s; }
+    .read-more:hover { gap: 14px; color: var(--primary-dark); }
+
+    /* Blog grid */
+    #blog-grid { padding: 100px 0; background: var(--tertiary); }
+    .blog-filter { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 48px; justify-content: center; }
+    .blog-filter-btn {
+      padding: 8px 20px; border-radius: var(--radius-full); border: 2px solid transparent;
+      background: var(--white); color: var(--neutral-dim); font-size: 13px; font-weight: 700;
+      cursor: pointer; transition: all .2s; font-family: 'Manrope', sans-serif;
+    }
+    .blog-filter-btn.active, .blog-filter-btn:hover { background: var(--secondary); color: var(--white); border-color: var(--secondary); }
+    .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+    @media (max-width: 1000px) { .blog-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 600px)  { .blog-grid { grid-template-columns: 1fr; } }
+
+    /* Blog card — 3D lift */
+    .blog-card {
+      background: var(--white); border-radius: var(--radius-lg); overflow: hidden;
+      border: 1px solid rgba(45,80,39,.08); box-shadow: var(--shadow-sm);
+      transition: transform .3s, box-shadow .3s; display: flex; flex-direction: column;
+    }
+    .blog-card:hover { transform: translateY(-6px) perspective(800px) rotateX(1deg); box-shadow: var(--shadow-lg); }
+    .blog-card-img { height: 200px; overflow: hidden; position: relative; }
+    .blog-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .blog-card:hover .blog-card-img img { transform: scale(1.06); }
+    .blog-card-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+    .blog-card-body .blog-tag { margin-bottom: 12px; }
+    .blog-card-meta { font-size: 12px; color: var(--neutral-dim); margin-bottom: 12px; display: flex; gap: 12px; }
+    .blog-card-body h4 { color: var(--secondary); font-size: 17px; line-height: 1.4; margin-bottom: 10px; }
+    .blog-card-body p  { font-size: 14px; line-height: 1.7; margin-bottom: 16px; flex: 1; }
+    .blog-card-body .read-more { font-size: 13px; }
+
+    /* Market intel dark section */
+    #market-intel { padding: 100px 0; background: var(--secondary); }
+    .intel-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+    @media (max-width: 900px) { .intel-grid { grid-template-columns: 1fr; } }
+    .intel-card {
+      padding: 36px; border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius-xl);
+      transition: all .3s;
+    }
+    .intel-card:hover { background: rgba(255,255,255,.06); border-color: rgba(154,218,68,.3); transform: translateY(-4px); }
+    .intel-icon { width: 52px; height: 52px; background: var(--primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--neutral); margin-bottom: 20px; }
+    .intel-card h4 { color: var(--white); font-size: 18px; margin-bottom: 12px; }
+    .intel-card p  { color: rgba(255,255,255,.7); font-size: 14px; line-height: 1.8; margin: 0; }
+
+    /* Newsletter CTA */
+    #newsletter { padding: 100px 0; background: var(--white); text-align: center; }
+    #newsletter h2 { color: var(--secondary); margin-bottom: 16px; }
+    #newsletter p  { max-width: 500px; margin: 0 auto 36px; }
+    .newsletter-form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+    .newsletter-form input { flex: 1; min-width: 200px; padding: 14px 18px; border: 1px solid rgba(45,80,39,.2); border-radius: var(--radius-md); font-family: 'Manrope', sans-serif; font-size: 15px; color: var(--neutral); background: var(--tertiary); outline: none; }
+    .newsletter-form input:focus { border-color: var(--primary); }
+    .newsletter-form input::placeholder { color: var(--neutral-dim); }
+    .newsletter-note { font-size: 12px; color: var(--neutral-dim); margin-top: 12px; }
+    .newsletter-wa { margin-top: 28px; }
+
+    /* ── Blog Mobile ── */
+    @media (max-width: 600px) {
+      .featured-body { padding: 28px 20px; }
+      .blog-filter   { gap: 8px; }
+      .blog-filter button { font-size: 12px; padding: 8px 14px; }
+      .blog-card-body { padding: 18px; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form input,
+      .newsletter-form button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><img src="logo/1.png" alt="El-Shimy" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="faqs.html">FAQs</a></li>
+      <li><a href="blogs.html" class="active">Blog</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="https://wa.me/201000000000?text=Hello%2C%20I%27m%20interested%20in%20El-Shimy%20products" target="_blank" rel="noopener" class="btn btn-wa btn-sm"><span class="material-symbols-outlined" style="font-size:16px">chat</span> WhatsApp</a>
+      <a href="index.html#quote" class="btn btn-primary btn-sm">Get a Quote</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="index.html" class="mobile-link">Home</a></li>
+    <li><a href="about.html" class="mobile-link">About</a></li>
+    <li><a href="products.html" class="mobile-link">Products</a></li>
+    <li><a href="faqs.html" class="mobile-link">FAQs</a></li>
+    <li><a href="blogs.html" class="mobile-link">Blog</a></li>
+  </ul>
+  <div class="mobile-btns">
+    <a href="https://wa.me/201000000000" target="_blank" rel="noopener" class="btn btn-wa mobile-link"><span class="material-symbols-outlined" style="font-size:18px">chat</span> WhatsApp Us</a>
+    <a href="index.html#quote" class="btn btn-primary mobile-link">Get a Quote</a>
+  </div>
+</div>
+
+<header class="page-hero">
+  <div class="page-hero-bg" style="--bg-img: url('https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?w=1600&q=70')"></div>
+  <div class="container page-hero-content">
+    <div class="page-hero-breadcrumb"><a href="index.html">Home</a><span class="material-symbols-outlined" style="font-size:16px">chevron_right</span>Blog</div>
+    <span class="section-label" style="color:var(--primary)">Market Intelligence</span>
+    <h1>Latest from the<br>Egyptian Fields</h1>
+    <p class="lead">Seasonal harvest updates, global market outlooks, and export insights — straight from our team on the ground in Egypt.</p>
+  </div>
+</header>
+
+<!-- Featured Article -->
+<section id="featured">
+  <div class="container">
+    <div class="section-header fade-in" style="margin-bottom: 48px;">
+      <span class="section-label">Featured</span>
+      <h2>This Season's Top Story</h2>
+    </div>
+    <div class="featured-card fade-in">
+      <div class="featured-img">
+        <img src="https://images.unsplash.com/photo-1547514701-42782101795e?w=800&q=80" alt="Egyptian orange season export market" />
+      </div>
+      <div class="featured-body">
+        <span class="blog-tag">Citrus Season</span>
+        <div class="blog-meta">
+          <span><span class="material-symbols-outlined" style="font-size:15px">calendar_month</span> April 2024</span>
+          <span><span class="material-symbols-outlined" style="font-size:15px">schedule</span> 5 min read</span>
+        </div>
+        <h2>Egypt's Orange Season 2024: Record Quality, Strong European Demand</h2>
+        <p>This season's Egyptian navel orange harvest is shaping up to be one of the strongest in recent years. Optimal Nile Valley weather conditions have produced fruit with exceptional sugar content, vibrant colour, and extended shelf life — key factors for European and Russian supermarket buyers. With Spain facing lower yields due to drought, Egyptian oranges are positioned to fill a significant market gap.</p>
+        <a href="#" class="read-more">Read Full Analysis <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Grid -->
+<section id="blog-grid" class="section-alt">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">All Articles</span>
+      <h2>Market Intelligence &amp; Harvest Updates</h2>
+    </div>
+    <div class="blog-filter fade-in">
+      <button class="blog-filter-btn active">All</button>
+      <button class="blog-filter-btn">Citrus</button>
+      <button class="blog-filter-btn">Berries</button>
+      <button class="blog-filter-btn">Tropical</button>
+      <button class="blog-filter-btn">Vegetables</button>
+      <button class="blog-filter-btn">Logistics</button>
+    </div>
+    <div class="blog-grid fade-in">
+
+      <div class="blog-card">
+        <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=600&q=80" alt="Egyptian strawberry export season" /></div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Spring Harvest</span>
+          <div class="blog-card-meta"><span>March 2024</span><span>4 min read</span></div>
+          <h4>Egyptian Strawberry Season: Premium Quality for Discerning Markets</h4>
+          <p>Our spring strawberry harvest delivers consistent quality to European and Gulf markets. Moderate climate conditions produce sweet, firm berries with exceptional shelf life — ideal for long-haul export.</p>
+          <a href="#" class="read-more">Read More <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=600&q=80" alt="Egyptian mango export season" /></div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Summer Season</span>
+          <div class="blog-card-meta"><span>July 2024</span><span>5 min read</span></div>
+          <h4>Egyptian Mango Export: Unrivalled Flavour, Global Reach</h4>
+          <p>Egyptian mangoes are renowned globally for their rich taste and optimal size. Warm upper Egypt climates produce some of the world's most sought-after mango varieties for Russia, Europe, and Gulf markets.</p>
+          <a href="#" class="read-more">Read More <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=600&q=80" alt="Egyptian produce sea freight export logistics" /></div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Logistics</span>
+          <div class="blog-card-meta"><span>February 2024</span><span>6 min read</span></div>
+          <h4>Cold-Chain Innovation: How Egypt is Transforming Fresh Produce Export</h4>
+          <p>Infrastructure investment in Egyptian port facilities and refrigerated transport is enabling a new era of produce export — faster, more reliable, and accessible to more markets than ever before.</p>
+          <a href="#" class="read-more">Read More <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=600&q=80" alt="Egyptian table grapes export" /></div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Autumn Harvest</span>
+          <div class="blog-card-meta"><span>June 2024</span><span>4 min read</span></div>
+          <h4>Table Grapes from Egypt: Competing on Quality Against Global Rivals</h4>
+          <p>Egyptian table grapes are carving out premium market share in Europe and Russia, outpacing competitors from Chile and South Africa on freshness, price, and logistics proximity.</p>
+          <a href="#" class="read-more">Read More <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1597714026720-8f74c62310ba?w=600&q=80" alt="Egyptian mandarin export season" /></div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Winter Harvest</span>
+          <div class="blog-card-meta"><span>November 2023</span><span>3 min read</span></div>
+          <h4>Mandarin Season Preview: Why Russian Buyers Are Turning to Egypt</h4>
+          <p>Egyptian mandarins are gaining rapid market share in Russia as importers seek supply chain diversification. This season's volume and quality forecast signals strong demand from Eastern European buyers.</p>
+          <a href="#" class="read-more">Read More <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Egyptian GlobalGAP certifications agriculture" /></div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Compliance</span>
+          <div class="blog-card-meta"><span>January 2024</span><span>5 min read</span></div>
+          <h4>What GlobalGAP Certification Really Means for Your Supply Chain</h4>
+          <p>Understanding GlobalGAP: why it matters for EU market access, what it requires from Egyptian farms, and how El-Shimy ensures every shipment is fully compliant with international food safety standards.</p>
+          <a href="#" class="read-more">Read More <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Market Intelligence Topics -->
+<section id="market-intel" class="section-dark">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">Intelligence Themes</span>
+      <h2>What We Track for You</h2>
+      <p>Our market intelligence covers the factors that drive your procurement decisions.</p>
+    </div>
+    <div class="intel-grid fade-in">
+      <div class="intel-card">
+        <div class="intel-icon"><span class="material-symbols-outlined">trending_up</span></div>
+        <h4>Seasonal Forecasts</h4>
+        <p>We publish pre-season outlooks for every product — including projected volume, quality grades, pricing trends, and harvest timing based on farm data and weather patterns.</p>
+      </div>
+      <div class="intel-card">
+        <div class="intel-icon"><span class="material-symbols-outlined">public</span></div>
+        <h4>Global Market Analysis</h4>
+        <p>Competitive comparison of Egypt vs. Spain, Morocco, South Africa, Turkey, and Chile — understanding where Egyptian produce has a competitive advantage and pricing opportunity.</p>
+      </div>
+      <div class="intel-card">
+        <div class="intel-icon"><span class="material-symbols-outlined">local_shipping</span></div>
+        <h4>Logistics &amp; Freight Updates</h4>
+        <p>Real-time awareness of sea freight rates, port conditions, and cold-chain developments affecting the speed and cost of getting Egyptian produce to your market.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section id="newsletter">
+  <div class="container fade-in">
+    <span class="section-label">Stay Informed</span>
+    <h2>Get Seasonal Updates Delivered</h2>
+    <p>Join buyers and importers who receive our harvest previews, pricing outlooks, and market intelligence directly — before each season begins.</p>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" placeholder="your@email.com" required />
+      <button type="submit" class="btn btn-secondary">Subscribe</button>
+    </form>
+    <p class="newsletter-note">No spam. One or two emails per season. Unsubscribe anytime.</p>
+    <div class="newsletter-wa">
+      <a href="https://wa.me/201000000000?text=I%27d%20like%20to%20receive%20El-Shimy%27s%20seasonal%20harvest%20updates" target="_blank" rel="noopener" class="btn btn-wa">
+        <span class="material-symbols-outlined" style="font-size:18px">chat</span>
+        Get Updates via WhatsApp Instead
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="logo/1.png" alt="El-Shimy" /></a>
+        <p>Egypt's premier agricultural exporter since 2016. Premium fresh fruits & vegetables delivered to 85+ countries worldwide.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><span class="material-symbols-outlined" style="font-size:18px">public</span></a>
+          <a href="#" aria-label="LinkedIn"><span class="material-symbols-outlined" style="font-size:18px">work</span></a>
+          <a href="#" aria-label="Instagram"><span class="material-symbols-outlined" style="font-size:18px">photo_camera</span></a>
+          <a href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="WhatsApp" class="wa-social"><span class="material-symbols-outlined" style="font-size:18px">chat</span></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="blogs.html">Blog</a></li></ul></div>
+      <div class="footer-col"><h4>Products</h4><ul><li><a href="products.html">Spring Harvest</a></li><li><a href="products.html">Summer Harvest</a></li><li><a href="products.html">Autumn Harvest</a></li><li><a href="products.html">Winter Harvest</a></li><li><a href="#" download>Product Catalogue PDF</a></li></ul></div>
+      <div class="footer-col"><h4>Business</h4><ul><li><a href="index.html#quote">Get a Free Quote</a></li><li><a href="about.html#certifications">Certifications</a></li><li><a href="blogs.html">Market Intelligence</a></li><li><a href="https://wa.me/201000000000" target="_blank" rel="noopener">WhatsApp Us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 El-Shimy for Trading & Agencies. Office 3, Mall 11, Beverly Hills, Giza, Egypt.</p>
+      <p><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/201000000000?text=Hello%20El-Shimy%2C%20I%27d%20like%20to%20inquire" target="_blank" rel="noopener" id="wa-float" aria-label="Chat on WhatsApp">
+  <span class="material-symbols-outlined" style="font-size:28px">chat</span>
+  <div class="wa-tooltip">Chat on WhatsApp</div>
+</a>
+<button id="scroll-top" aria-label="Scroll to top"><span class="material-symbols-outlined" style="font-size:20px">arrow_upward</span></button>
+<script src="shared.js"></script>
+</body>
+</html>
