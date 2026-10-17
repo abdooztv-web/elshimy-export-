@@ -1,102 +1,28 @@
-# El-Shimy for Trading & Agencies
+# EL-SHIMY website
 
-**Egypt's premier agricultural exporter** — premium fresh fruits and vegetables delivered to 85+ countries worldwide since 2016.
+Bilingual (English / Arabic RTL) static website for **EL-SHIMY for Trading & Agencies**: *Egyptian Products. Global Markets.*
 
----
+No framework. Pages are generated from `scripts/content.py` by `scripts/build.py` into plain HTML that any static host can serve.
 
-## About the Website
-
-A fully responsive, 5-page static website showcasing El-Shimy's export capabilities with modern 3D design elements. Built with pure HTML, CSS, and JavaScript — no frameworks, no build tools required.
-
-### Pages
-
-| Page | File | Description |
-|------|------|-------------|
-| Home | `index.html` | Hero with 3D floating product cards, export capabilities, services, testimonials, quote form |
-| About | `about.html` | Company story, timeline, values, mission/vision, certifications |
-| Products | `products.html` | Seasonal product catalogue with 3D flip cards, export process, global markets |
-| FAQs | `faqs.html` | 18 FAQs across 5 categories with smooth accordion |
-| Blog | `blogs.html` | Market intelligence articles, featured post, newsletter |
-
----
-
-## Tech Stack
-
-- **HTML5** — semantic, SEO-optimised markup with structured data (JSON-LD)
-- **CSS3** — custom design system, CSS variables, `perspective`/`preserve-3d` for 3D effects
-- **Vanilla JS** — IntersectionObserver, animated counters, FAQ accordion, season tabs, mobile menu
-- **Google Fonts** — Manrope typeface
-- **Google Material Symbols** — icon set
-
-### 3D Effects Used
-
-- Floating product cards in hero (CSS `rotateX/Y + translateZ + @keyframes`)
-- Perspective grid floor in hero
-- 3D flip cards on hover (Products page)
-- Mouse-tilt effect on value/feature cards (JS `mousemove` + `perspective`)
-- Spinning 3D globe (CSS `rotateY` animation)
-
----
-
-## Project Structure
-
+## Structure
 ```
-elshimy-export/
-├── index.html        # Home page
-├── about.html        # About page
-├── products.html     # Products page
-├── faqs.html         # FAQs page
-├── blogs.html        # Blog page
-├── style.css         # Shared design system
-├── shared.js         # Shared JavaScript
-└── logo/
-    ├── 1.png         # Primary logo (dark text)
-    ├── 2.png         # Alternate logo (light text)
-    └── 3.png         # Icon mark
+/                      language chooser (x-default)
+/en/  /ar/             home
+/{lang}/products/      catalogue with category + fresh/frozen filters
+/{lang}/products/<slug>/   19 product pages
+/{lang}/sourcing-export/  freight-customs/  quality-food-safety/  about/  markets/  insights/  contact/
+404.html  sitemap.xml  robots.txt  vercel.json  _redirects
+about.html products.html faqs.html blogs.html   legacy URLs -> redirect stubs (+ 301s in vercel.json/_redirects)
 ```
 
----
-
-## Running Locally
-
-No build step needed — just serve the files:
-
+## Workflow
 ```bash
-# Using Node.js (built-in)
-node -e "require('http').createServer((req,res)=>{ require('fs').readFile('./'+req.url.slice(1)||'index.html',(e,d)=>{ res.end(d); }); }).listen(3000)"
-
-# Or using npx serve
-npx serve .
+pip install pillow
+python scripts/build.py     # regenerate all pages, sitemap, robots, redirects
+python scripts/check.py     # broken links, titles/descriptions, h1, canonical, hreflang, sitemap, alt/dimensions
+python -m http.server 8000  # preview at http://localhost:8000
 ```
+`python scripts/prepare_assets.py` re-creates the cropped logos and optimised stock photos.
 
-Then open **http://localhost:3000**
-
----
-
-## Design System
-
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--primary` | `#9ADA44` | Accent green, CTAs |
-| `--secondary` | `#2D5027` | Dark green, headings |
-| `--neutral` | `#1A201B` | Near-black, footer |
-| `--tertiary` | `#F4F7F0` | Light bg sections |
-
-### Breakpoints
-
-| Breakpoint | Width | Changes |
-|------------|-------|---------|
-| Desktop | > 1024px | Full layout, 3D effects active |
-| Tablet | ≤ 900px | Hamburger nav, grids collapse |
-| Mobile | ≤ 600px | Single column, flip cards stacked |
-| Small | ≤ 380px | Minimal nav, compact buttons |
-
----
-
-## Contact
-
-- **Website:** [elshimy.com](https://elshimy.com)
-- **Email:** info@elshimy.com
-- **Export enquiries:** export@elshimy.com
-- **WhatsApp:** [Chat with us](https://wa.me/201000000000)
-- **Location:** Office 3, Mall 11, Beverly Hills, Giza, Egypt
+## Before launch (see docs/research.md)
+Set in `scripts/content.py`: `WHATSAPP`, `FORM_ENDPOINT` (Formspree/Netlify/etc.; otherwise the form opens an email draft), `GSC_TOKEN`, and flip `SHOW_ISO` / `SHOW_VOLUME` only after verification. Confirm `EMAIL` and `ADDRESS`. Replace stock photos with real ones. Then submit `https://elshimy.com/sitemap.xml` in Search Console (verification has **not** been done).

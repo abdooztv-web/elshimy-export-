@@ -1,0 +1,25 @@
+{
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/about.html",
+      "destination": "/en/about/",
+      "permanent": true
+    },
+    {
+      "source": "/products.html",
+      "destination": "/en/products/",
+      "permanent": true
+    },
+    {
+      "source": "/faqs.html",
+      "destination": "/en/insights/",
+      "permanent": true
+    },
+    {
+      "source": "/blogs.html",
+      "destination": "/en/insights/",
+      "permanent": true
+    }
+  ]
+}
