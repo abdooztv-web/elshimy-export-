@@ -407,7 +407,7 @@ def build_quality(lang):
     trace = f'''<section class="section alt" id="traceability"><div class="wrap trace">
 <div class="trace-copy reveal"><h2>{d["trace_h"]}</h2><p>{d["trace_p"]}</p><ul class="iconlist">{tr}</ul><p class="note">{d["trace_note"]}</p></div>
 <div class="trace-vis reveal">{B.picture("grapes", d["trace_img_alt"], cls="trace-img", sizes="(min-width:900px) 45vw, 100vw")}
-<figure class="sheet" aria-label="{d["sheet_t"]}"><span class="ribbon">{d["sheet_ribbon"]}</span><figcaption><img src="/assets/img/logo.png" width="96" height="29" alt=""> <b>{d["sheet_t"]}</b></figcaption><table><tbody>{sheet}</tbody></table></figure></div></div></section>'''
+<figure class="sheet" aria-label="{d["sheet_t"]}"><span class="ribbon">{d["sheet_ribbon"]}</span><figcaption><img src="/assets/img/logo.png" width="96" height="28" alt=""> <b>{d["sheet_t"]}</b></figcaption><table><tbody>{sheet}</tbody></table></figure></div></div></section>'''
     honest = "".join(f"<li>{icon('check')}{x}</li>" for x in d["honest"])
     cert = f'''<section class="section" id="certifications"><div class="wrap">{sec_head(d["cert_h"], d["cert_p"])}
 <div class="cert-grid"><article class="iso reveal"><div class="iso-ring" aria-hidden="true">{icon("award")}</div><div><h3>{d["iso_t"]}</h3><p class="iso-s">{d["iso_s"]}</p><p>{d["iso_p"]}</p>{btn(contact_href(lang, "certificate"), d["iso_btn"], "primary")}</div></article>

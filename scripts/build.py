@@ -111,7 +111,7 @@ def header(lang, key, alt_path):
     return f'''<a class="skip" href="#main">{ui["skip"]}</a>
 <header class="site-header" id="top">
  <div class="wrap bar">
-  <a class="brand" href="{url("home", lang)}" aria-label="EL-SHIMY"><img src="/assets/img/logo.png" width="180" height="55" alt="EL-SHIMY"></a>
+  <a class="brand" href="{url("home", lang)}" aria-label="EL-SHIMY"><img src="/assets/img/logo.png" width="180" height="52" alt="EL-SHIMY"></a>
   <nav class="nav" id="nav" aria-label="Main"><ul>{items}</ul></nav>
   <div class="bar-actions">
    <a class="lang" href="{alt_path}" hreflang="{other(lang)}" lang="{other(lang)}" aria-label="{ui["lang_label"]}">{ui["lang_name"]}</a>
@@ -128,7 +128,7 @@ def footer(lang):
     wa = f'<li><a href="{wa_link(lang)}" rel="noopener" target="_blank">{ui["whatsapp"]}</a></li>' if C.WHATSAPP else ""
     return f'''<footer class="site-footer">
  <div class="wrap grid-4">
-  <div><img src="/assets/img/logo-light.png" width="170" height="52" alt="EL-SHIMY" loading="lazy"><p class="foot-tag">{ui["footer_tag"]}</p><p class="small">{C.LEGAL[lang]}</p></div>
+  <div><img src="/assets/img/logo-light.png" width="170" height="49" alt="EL-SHIMY" loading="lazy"><p class="foot-tag">{ui["footer_tag"]}</p><p class="small">{C.LEGAL[lang]}</p></div>
   <div><h2 class="foot-h">{ui["footer_products"]}</h2><ul>{prods}<li><a href="{url("products", lang)}">{ui["view_all"]}</a></li></ul></div>
   <div><h2 class="foot-h">{ui["footer_company"]}</h2><ul>{comp}</ul></div>
   <div><h2 class="foot-h">{ui["footer_contact"]}</h2><ul><li><a href="{url("contact", lang)}">{ui["quote"]}</a></li><li><a href="mailto:{C.EMAIL}">{C.EMAIL}</a></li>{wa}<li class="small">{C.ADDRESS[lang]}</li></ul></div>
@@ -347,7 +347,7 @@ def build_404():
 {head("en", "Page not found | EL-SHIMY · الصفحة غير موجودة", "Page not found.", "/404.html", None, noindex=True, hreflang=False)}
 </head>
 <body class="lang-en">
-<header class="site-header"><div class="wrap bar"><a class="brand" href="/"><img src="/assets/img/logo.png" width="180" height="55" alt="EL-SHIMY"></a></div></header>
+<header class="site-header"><div class="wrap bar"><a class="brand" href="/"><img src="/assets/img/logo.png" width="180" height="52" alt="EL-SHIMY"></a></div></header>
 <main id="main" class="wrap nf-wrap"><h1>404</h1>{out}</main>
 </body></html>
 '''
@@ -366,7 +366,7 @@ def build_root():
 </head>
 <body class="lang-en chooser">
 <main id="main" class="chooser-in">
- <img src="/assets/img/logo.png" width="240" height="73" alt="EL-SHIMY">
+ <img src="/assets/img/logo.png" width="240" height="69" alt="EL-SHIMY">
  <h1 class="sr">EL-SHIMY</h1>
  <p class="lead">Egyptian Products. Global Markets.</p>
  <p class="lead" lang="ar" dir="rtl">منتجات مصرية. أسواق عالمية.</p>
