@@ -24,12 +24,16 @@ def url(key, lang, slug=None):
         "home": f"/{lang}/", "products": f"/{lang}/products/", "product": f"/{lang}/products/{slug}/",
         "services": f"/{lang}/sourcing-export/", "freight": f"/{lang}/freight-customs/",
         "quality": f"/{lang}/quality-food-safety/", "about": f"/{lang}/about/", "markets": f"/{lang}/markets/",
-        "insights": f"/{lang}/insights/", "guide": f"/{lang}/insights/{C.GUIDE_SLUG}/", "contact": f"/{lang}/contact/",
+        "credits": f"/{lang}/photo-credits/", "insights": f"/{lang}/insights/", "guide": f"/{lang}/insights/{C.GUIDE_SLUG}/", "contact": f"/{lang}/contact/",
     }[key]
 
 def other(lang): return "ar" if lang == "en" else "en"
 def abs_url(p): return C.SITE + p
 PBY = {p["slug"]: p for p in C.P}
+try:
+    CREDITS = json.load(open(os.path.join(ROOT, "assets/img/credits.json"), encoding="utf-8"))
+except OSError:
+    CREDITS = {}
 
 # ───────────── image helpers ─────────────
 _dims = {}
@@ -129,7 +133,7 @@ def footer(lang):
   <div><h2 class="foot-h">{ui["footer_company"]}</h2><ul>{comp}</ul></div>
   <div><h2 class="foot-h">{ui["footer_contact"]}</h2><ul><li><a href="{url("contact", lang)}">{ui["quote"]}</a></li><li><a href="mailto:{C.EMAIL}">{C.EMAIL}</a></li>{wa}<li class="small">{C.ADDRESS[lang]}</li></ul></div>
  </div>
- <div class="wrap foot-bottom"><p class="small">© {datetime.date.today().year} {C.LEGAL[lang]}. {ui["rights"]}</p><p class="small">{ui["img_note"]}</p></div>
+ <div class="wrap foot-bottom"><p class="small">© {datetime.date.today().year} {C.LEGAL[lang]}. {ui["rights"]}</p><p class="small">{ui["img_note"]} <a href="{url("credits", lang)}">{ui["credits"]}</a></p></div>
 </footer>'''
 
 def crumbs(lang, trail):
@@ -237,7 +241,13 @@ def build_product(lang, p):
     bc, ld = crumbs(lang, [(ui["nav"]["products"], url("products", lang)), (p["name"][lang], None)])
     form_label = ui["frozen"] if p["form"] == "frozen" else ui["fresh"]
     caption = ""
-    if p["img"]: caption = f'<figcaption>{ {"en": "Illustrative stock photo", "ar": "صورة توضيحية"}[lang] }</figcaption>'
+    if p["img"]:
+        cr = CREDITS.get(p["img"])
+        if cr:
+            lead = {"en": "Illustrative photo", "ar": "صورة توضيحية"}[lang]
+            caption = f'<figcaption>{lead}: {esc(cr["artist"])}, <a href="{cr["license_url"] or cr["source"]}" rel="noopener">{esc(cr["license"])}</a> · <a href="{url("credits", lang)}">{C.UI[lang]["credits"]}</a></figcaption>'
+        else:
+            caption = f'<figcaption>{ {"en": "Illustrative stock photo", "ar": "صورة توضيحية"}[lang] }</figcaption>'
     media = f'<figure class="p-fig">{product_media(p, lang, eager=True, sizes="(min-width:900px) 45vw, 100vw")}{caption}</figure>'
     det = ""
     for i, (k, lbl) in enumerate((("varieties", "varieties"), ("sizes", "sizes"), ("packing", "packaging"), ("storage", "storage"), ("docs", "docs"))):
@@ -279,6 +289,20 @@ def build_static(lang, key):
 <section class="section"><div class="wrap prose">{secs}{extra}</div></section>
 {cta_band(lang)}'''
     return page(lang, key if key != "guide" else "insights", path, a, d["title"], d["meta"], body, ld=[ld])
+
+def build_credits(lang):
+    ui = C.UI[lang]; d = C.CREDITS[lang]; a = url("credits", other(lang))
+    bc, ld = crumbs(lang, [(d["h1"], None)])
+    rows = ""
+    for p in C.P:
+        cr = CREDITS.get(p["img"] or "")
+        if not cr: continue
+        rows += (f'<tr><th scope="row"><a href="{url("product", lang, p["slug"])}">{esc(p["name"][lang].split(":")[0])}</a></th><td>{esc(cr["artist"])}</td>'
+                 f'<td><a href="{cr["license_url"] or cr["source"]}" rel="noopener">{esc(cr["license"])}</a></td><td><a href="{cr["source"]}" rel="noopener">{d["view"]}</a></td></tr>')
+    head_ = "".join(f"<th scope='col'>{c_}</th>" for c_ in d["cols"])
+    body = f'''{visual.hero_lite(lang, bc, d["h1"], d["lead"], cls="hero-compact")}
+<section class="section"><div class="wrap prose"><div class="matrix-wrap" tabindex="0" role="region" aria-label="{d["h1"]}"><table class="cmp"><thead><tr>{head_}</tr></thead><tbody>{rows}</tbody></table></div><p class="note">{d["unsplash"]}</p></div></section>'''
+    return page(lang, "credits", url("credits", lang), a, d["title"], d["meta"], body, ld=[ld])
 
 def build_contact(lang):
     ui = C.UI[lang]; f = C.FORM[lang]; d = C.PAGES["contact"][lang]; a = url("contact", other(lang))
@@ -398,7 +422,8 @@ def main():
                       ("markets", visual.build_markets), ("insights", visual.build_insights), ("guide", visual.build_guide)):
             write(url(k, lang) + "index.html", fn(lang))
         write(url("contact", lang) + "index.html", build_contact(lang))
-    for k in ("home", "products", "services", "freight", "quality", "about", "markets", "insights", "guide", "contact"): reg(k)
+        write(url("credits", lang) + "index.html", build_credits(lang))
+    for k in ("home", "products", "services", "freight", "quality", "about", "markets", "insights", "guide", "contact", "credits"): reg(k)
     for p in C.P: reg("product", p["slug"])
     # Fix home x-default: both language homes point x-default to the chooser at "/"
     write("index.html", build_root())

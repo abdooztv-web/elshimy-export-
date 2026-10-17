@@ -1,0 +1,86 @@
+{
+ "potatoes": {
+  "title": "Aalugaddalu.JPG",
+  "artist": "Bhaskaranaidu",
+  "license": "CC BY 2.5",
+  "license_url": "https://creativecommons.org/licenses/by/2.5",
+  "source": "https://commons.wikimedia.org/wiki/File:Aalugaddalu.JPG"
+ },
+ "yellow-onions": {
+  "title": "500px photo (39214994).jpeg",
+  "artist": "Rosa Elena Méndez Meza",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:500px_photo_(39214994).jpeg"
+ },
+ "red-onions": {
+  "title": "9892Baliuag, Bulacan during Pandemic Lockdown 02.jpg",
+  "artist": "JFVelasquez Floro",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "source": "https://commons.wikimedia.org/wiki/File:9892Baliuag,_Bulacan_during_Pandemic_Lockdown_02.jpg"
+ },
+ "tomatoes": {
+  "title": "AgroFidanishtja Havolli tomato's.jpg",
+  "artist": "AgroFidanishtjaHavolli",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:AgroFidanishtja_Havolli_tomato%27s.jpg"
+ },
+ "lemons": {
+  "title": "Citrus limon (Rutaceae).jpg",
+  "artist": "Filo gèn'",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Citrus_limon_(Rutaceae).jpg"
+ },
+ "pomegranates": {
+  "title": "Granadas - panoramio.jpg",
+  "artist": "Javier del Castillo …",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Granadas_-_panoramio.jpg"
+ },
+ "dates": {
+  "title": "Date palm - Anduhjerd, Shahdad, Kerman.jpg",
+  "artist": "ImanFakhri",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Date_palm_-_Anduhjerd,_Shahdad,_Kerman.jpg"
+ },
+ "guava": {
+  "title": "COMMON GUAVA.jpg",
+  "artist": "Ranjithkumar Murugesan",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "source": "https://commons.wikimedia.org/wiki/File:COMMON_GUAVA.jpg"
+ },
+ "pears": {
+  "title": "Corbeille de poires-1-cliche Jean Weber (23048297373).jpg",
+  "artist": "INRA DIST from France",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Corbeille_de_poires-1-cliche_Jean_Weber_(23048297373).jpg"
+ },
+ "stone-fruits": {
+  "title": "Apricots 2 - Farmer's Market at the Ferry Building - San Francisco, CA - DSC03603.JPG",
+  "artist": "Daderot",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "source": "https://commons.wikimedia.org/wiki/File:Apricots_2_-_Farmer%27s_Market_at_the_Ferry_Building_-_San_Francisco,_CA_-_DSC03603.JPG"
+ },
+ "prickly-pear": {
+  "title": "Prickly Pear Fruit (50618126823).jpg",
+  "artist": "SaguaroNPS",
+  "license": "Public domain",
+  "license_url": "",
+  "source": "https://commons.wikimedia.org/wiki/File:Prickly_Pear_Fruit_(50618126823).jpg"
+ },
+ "iqf-berries": {
+  "title": "Frozen Raspberries.jpg",
+  "artist": "epSos.de",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Frozen_Raspberries.jpg"
+ }
+}

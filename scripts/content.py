@@ -23,7 +23,7 @@ UI = {
   "quote": "Request a Quote", "lang_name": "العربية", "lang_label": "Read this page in Arabic",
   "home": "Home", "breadcrumb": "Breadcrumb", "footer_tag": "Egyptian Products. Global Markets.",
   "footer_products": "Products", "footer_company": "Company", "footer_contact": "Contact",
-  "img_note": "Images are illustrative stock photography unless captioned otherwise.",
+  "img_note": "Images are illustrative stock photography unless captioned otherwise.", "credits": "Photo credits",
   "rights": "All rights reserved.", "whatsapp": "WhatsApp", "email_us": "Email us",
   "view_all": "View all products", "learn_more": "Learn more", "request_quote_for": "Request a quote for",
   "fresh": "Fresh", "frozen": "Frozen (IQF)", "veg": "Vegetables", "fruit": "Fruits", "frozen_cat": "Frozen Products",
@@ -41,7 +41,7 @@ UI = {
   "quote": "اطلب عرض سعر", "lang_name": "English", "lang_label": "اقرأ هذه الصفحة بالإنجليزية",
   "home": "الرئيسية", "breadcrumb": "مسار التنقل", "footer_tag": "منتجات مصرية. أسواق عالمية.",
   "footer_products": "المنتجات", "footer_company": "الشركة", "footer_contact": "تواصل معنا",
-  "img_note": "الصور المستخدمة توضيحية من مصادر صور مجانية ما لم يُذكر خلاف ذلك.",
+  "img_note": "الصور المستخدمة توضيحية من مصادر صور مجانية ما لم يُذكر خلاف ذلك.", "credits": "حقوق الصور",
   "rights": "جميع الحقوق محفوظة.", "whatsapp": "واتساب", "email_us": "راسلنا عبر البريد",
   "view_all": "عرض كل المنتجات", "learn_more": "اعرف المزيد", "request_quote_for": "اطلب عرض سعر لـ",
   "fresh": "طازج", "frozen": "مجمد (IQF)", "veg": "الخضروات", "fruit": "الفاكهة", "frozen_cat": "المنتجات المجمدة",
@@ -72,7 +72,7 @@ DOCS_GEN = {
  "ar": "المستندات المطلوبة عادةً: الفاتورة التجارية، قائمة التعبئة، شهادة صحة نباتية، شهادة المنشأ وأي مستندات يطلبها المستورد. نؤكد المجموعة المطلوبة معك قبل الشحن.",
 }
 
-add(slug="egyptian-potatoes", cat="veg", img=None, accent="#C8A25B", form="fresh",
+add(slug="egyptian-potatoes", cat="veg", img="potatoes", accent="#C8A25B", form="fresh",
  name={"en": "Egyptian Potatoes", "ar": "البطاطس المصرية"},
  tag={"en": "Table potatoes for retail, wholesale and food service", "ar": "بطاطس مائدة للتجزئة والجملة والمطاعم"},
  title={"en": "Egyptian Potatoes Export | Fresh Table Potatoes | EL-SHIMY", "ar": "تصدير البطاطس المصرية | بطاطس طازجة | الشيمي"},
@@ -86,7 +86,7 @@ add(slug="egyptian-potatoes", cat="veg", img=None, accent="#C8A25B", form="fresh
         "ar": "تُصنَّف بالقطر بالمليمتر (مثلاً 35–55 أو 45–65 مم) مع حدود للعيوب والاخضرار والتلف. أرسل نطاق الحجم المطلوب لنؤكد المتاح."},
  packing=PACK_GEN, season={"en": "≈ Jan – May", "ar": "≈ يناير – مايو"})
 
-add(slug="yellow-onions", cat="veg", img=None, accent="#D9A441", form="fresh",
+add(slug="yellow-onions", cat="veg", img="yellow-onions", accent="#D9A441", form="fresh",
  name={"en": "Yellow / Golden Onions", "ar": "البصل الأصفر (الذهبي)"},
  tag={"en": "Dry golden onions, graded and bagged for export", "ar": "بصل ذهبي جاف، مفروز ومعبأ للتصدير"},
  title={"en": "Yellow Onions from Egypt | Golden Onion Exporter | EL-SHIMY", "ar": "البصل الأصفر المصري | مُصدّر البصل الذهبي | الشيمي"},
@@ -102,7 +102,7 @@ add(slug="yellow-onions", cat="veg", img=None, accent="#D9A441", form="fresh",
           "ar": "أجولة شبكية (غالباً 10–25 كجم) على بالتات وتُحمَّل في حاويات مهواة أو مبرّدة. يُتفق على الوزن والملصقات لكل طلب."},
  season={"en": "≈ Jan – Aug", "ar": "≈ يناير – أغسطس"})
 
-add(slug="red-onions", cat="veg", img=None, accent="#9C2F4F", form="fresh",
+add(slug="red-onions", cat="veg", img="red-onions", accent="#9C2F4F", form="fresh",
  name={"en": "Red Onions", "ar": "البصل الأحمر"},
  tag={"en": "Mild to sweet red onions for retail and food service", "ar": "بصل أحمر معتدل إلى حلو للتجزئة والمطاعم"},
  title={"en": "Egyptian Red Onions Export | Red Onion Supplier | EL-SHIMY", "ar": "تصدير البصل الأحمر المصري | مورّد البصل الأحمر | الشيمي"},
@@ -116,7 +116,7 @@ add(slug="red-onions", cat="veg", img=None, accent="#9C2F4F", form="fresh",
         "ar": "تُصنَّف بالقطر بالمليمتر (مثلاً 40–60 أو 50–80 مم). أكّد النطاق وحدود العيوب في طلبك."},
  packing=PACK_GEN, season={"en": "≈ Jan – Aug", "ar": "≈ يناير – أغسطس"})
 
-add(slug="tomatoes", cat="veg", img=None, accent="#C8402B", form="fresh",
+add(slug="tomatoes", cat="veg", img="tomatoes", accent="#C8402B", form="fresh",
  name={"en": "Egyptian Tomatoes", "ar": "الطماطم المصرية"},
  tag={"en": "Fresh round tomatoes, packed for export", "ar": "طماطم مستديرة طازجة معبأة للتصدير"},
  title={"en": "Egyptian Tomatoes Export | Fresh Tomato Supplier | EL-SHIMY", "ar": "تصدير الطماطم المصرية | مورّد طماطم طازجة | الشيمي"},
@@ -161,7 +161,7 @@ add(slug="mandarins", cat="fruit", img="mandarins", accent="#E8892B", form="fres
  sizes={"en": "Sized by count per carton in bands agreed per order (for example 72–125).", "ar": "تُصنَّف بالعدد في الكرتونة بنطاقات تُتفق لكل طلب (مثلاً 72–125)."},
  packing=PACK_GEN, season={"en": "≈ Nov – Feb", "ar": "≈ نوفمبر – فبراير"})
 
-add(slug="lemons", cat="fruit", img=None, accent="#E3C53B", form="fresh",
+add(slug="lemons", cat="fruit", img="lemons", accent="#E3C53B", form="fresh",
  name={"en": "Egyptian Lemons & Limes", "ar": "الليمون المصري"},
  tag={"en": "Adalia lemons and green limes", "ar": "ليمون أداليا وليمون أخضر"},
  title={"en": "Egyptian Lemons Export | Adalia Lemon & Lime Supplier | EL-SHIMY", "ar": "تصدير الليمون المصري | أداليا والليمون الأخضر | الشيمي"},
@@ -189,7 +189,7 @@ add(slug="strawberries", cat="fruit", img="strawberries", accent="#C8283C", form
           "ar": "عبوات أو علب بلاستيكية في كراتين على بالتات؛ وتُبرَّد مسبقاً قبل التحميل. يُتفق على الأوزان والملصقات لكل طلب."},
  season={"en": "≈ Nov – Feb", "ar": "≈ نوفمبر – فبراير"})
 
-add(slug="pomegranates", cat="fruit", img=None, accent="#A3203A", form="fresh",
+add(slug="pomegranates", cat="fruit", img="pomegranates", accent="#A3203A", form="fresh",
  name={"en": "Egyptian Pomegranates", "ar": "الرمان المصري"},
  tag={"en": "Red pomegranates with good colour and juice", "ar": "رمان أحمر بلون وعصير جيدين"},
  title={"en": "Egyptian Pomegranates Export | Pomegranate Supplier | EL-SHIMY", "ar": "تصدير الرمان المصري | مورّد الرمان | الشيمي"},
@@ -231,7 +231,7 @@ add(slug="mangoes", cat="fruit", img="mangoes", accent="#E7A33A", form="fresh",
  packing={"en": "Cartons (commonly 4–5 kg) with protective liners, palletised; heat or other treatments per destination rules.", "ar": "كراتين (غالباً 4–5 كجم) ببطانة واقية على بالتات؛ مع معالجات حرارية أو غيرها وفق متطلبات الوجهة."},
  season={"en": "≈ Jul – Oct", "ar": "≈ يوليو – أكتوبر"})
 
-add(slug="dates", cat="fruit", img=None, accent="#8A5A2B", form="fresh",
+add(slug="dates", cat="fruit", img="dates", accent="#8A5A2B", form="fresh",
  name={"en": "Egyptian Dates", "ar": "البلح والتمور المصرية"},
  tag={"en": "Barhi (fresh) and other Egyptian date varieties", "ar": "بلح برحي طازج وأصناف تمور مصرية أخرى"},
  title={"en": "Egyptian Dates Export | Barhi & Fresh Dates Supplier | EL-SHIMY", "ar": "تصدير التمور المصرية | بلح برحي وتمور طازجة | الشيمي"},
@@ -243,7 +243,7 @@ add(slug="dates", cat="fruit", img=None, accent="#8A5A2B", form="fresh",
  sizes={"en": "Graded by size, colour and moisture; defined per variety and order.", "ar": "تُفرز بحسب الحجم واللون والرطوبة، وتُحدد لكل صنف وطلب."},
  packing=PACK_GEN, season={"en": "Barhi ≈ Jul – Sep", "ar": "البرحي ≈ يوليو – سبتمبر"})
 
-add(slug="guava", cat="fruit", img=None, accent="#7DB264", form="fresh",
+add(slug="guava", cat="fruit", img="guava", accent="#7DB264", form="fresh",
  name={"en": "Egyptian Guava", "ar": "الجوافة المصرية"},
  tag={"en": "Fragrant guava, rich in vitamin C", "ar": "جوافة عطرية غنية بفيتامين C"},
  title={"en": "Egyptian Guava Export | Fresh Guava Supplier | EL-SHIMY", "ar": "تصدير الجوافة المصرية | مورّد جوافة طازجة | الشيمي"},
@@ -267,7 +267,7 @@ add(slug="watermelon", cat="fruit", img="watermelon", accent="#3F8F4E", form="fr
  packing={"en": "Loose in bulk bins or packed in cartons/crates and palletised, depending on shipping mode.", "ar": "سائبة في صناديق كبيرة أو معبأة في كراتين/صناديق على بالتات بحسب وسيلة الشحن."},
  season={"en": "≈ May – Jul", "ar": "≈ مايو – يوليو"})
 
-add(slug="pears", cat="fruit", img=None, accent="#A9B84A", form="fresh",
+add(slug="pears", cat="fruit", img="pears", accent="#A9B84A", form="fresh",
  name={"en": "Egyptian Pears", "ar": "الكمثرى المصرية"},
  tag={"en": "Autumn pears for fresh markets", "ar": "كمثرى خريفية للأسواق الطازجة"},
  title={"en": "Egyptian Pears Export | Fresh Pear Supplier | EL-SHIMY", "ar": "تصدير الكمثرى المصرية | مورّد كمثرى طازجة | الشيمي"},
@@ -278,7 +278,7 @@ add(slug="pears", cat="fruit", img=None, accent="#A9B84A", form="fresh",
  sizes={"en": "Graded by diameter or weight, defined per order.", "ar": "تُفرز بحسب القطر أو الوزن وتُحدد لكل طلب."},
  packing=PACK_GEN, season={"en": "≈ Aug – Nov", "ar": "≈ أغسطس – نوفمبر"})
 
-add(slug="stone-fruits", cat="fruit", img=None, accent="#E58A5B", form="fresh",
+add(slug="stone-fruits", cat="fruit", img="stone-fruits", accent="#E58A5B", form="fresh",
  name={"en": "Stone Fruits: Apricots, Peaches, Nectarines & Plums", "ar": "الفاكهة ذات النواة: مشمش وخوخ ونكتارين وبرقوق"},
  tag={"en": "Spring and summer stone fruit, grouped on one page", "ar": "فاكهة النواة الربيعية والصيفية في صفحة واحدة"},
  title={"en": "Egyptian Stone Fruit Export | Apricots, Peaches, Plums | EL-SHIMY", "ar": "تصدير الفاكهة ذات النواة المصرية | مشمش وخوخ وبرقوق | الشيمي"},
@@ -291,7 +291,7 @@ add(slug="stone-fruits", cat="fruit", img=None, accent="#E58A5B", form="fresh",
  packing={"en": "Single- or double-layer trays in cartons, palletised and pre-cooled; air freight is often preferred for long routes.", "ar": "صواني بطبقة أو طبقتين في كراتين على بالتات ومبرّدة مسبقاً؛ وغالباً يُفضَّل الشحن الجوي للمسافات الطويلة."},
  season={"en": "≈ Apr/May – Aug (varies by fruit)", "ar": "≈ أبريل/مايو – أغسطس (بحسب الفاكهة)"})
 
-add(slug="prickly-pear", cat="fruit", img=None, accent="#C3417A", form="fresh",
+add(slug="prickly-pear", cat="fruit", img="prickly-pear", accent="#C3417A", form="fresh",
  name={"en": "Prickly Pear (Cactus Pear)", "ar": "التين الشوكي"},
  tag={"en": "De-spined prickly pear for specialty markets", "ar": "تين شوكي منزوع الأشواك للأسواق المتخصصة"},
  title={"en": "Egyptian Prickly Pear Export | Cactus Pear Supplier | EL-SHIMY", "ar": "تصدير التين الشوكي المصري | مورّد التين الشوكي | الشيمي"},
@@ -318,7 +318,7 @@ add(slug="iqf-strawberries", cat="frozen", img="strawberries", accent="#C8283C",
  storage={"en": "Stored and shipped frozen at −18 °C or below in reefer containers. Cold-chain records and temperature set-points are agreed with you per shipment.",
           "ar": "تُخزَّن وتُشحن مجمدة عند −18 °م أو أقل في حاويات مبرّدة. تُتفق سجلات سلسلة التبريد ودرجات الحرارة معك لكل شحنة."})
 
-add(slug="iqf-berries", cat="frozen", img=None, accent="#3C4E8F", form="frozen",
+add(slug="iqf-berries", cat="frozen", img="iqf-berries", accent="#3C4E8F", form="frozen",
  name={"en": "IQF Berries: Blueberries, Raspberries & Blackberries", "ar": "التوت المجمد IQF: توت أزرق وتوت العُليق والتوت الأسود"},
  tag={"en": "Frozen berries for manufacturing and food service", "ar": "توت مجمد للتصنيع وقطاع الضيافة"},
  title={"en": "IQF Berries from Egypt | Frozen Blueberries, Raspberries | EL-SHIMY", "ar": "توت IQF مصري | توت أزرق وعُليق مجمد | الشيمي"},
@@ -552,4 +552,13 @@ FORM = {
         "ok_mailto": "يجب أن يفتح تطبيق البريد الآن برسالة معبأة مسبقاً. إن لم يحدث ذلك فراسلنا على",
         "fail": "عذراً، تعذر إرسال استفسارك. يرجى مراسلتنا مباشرة على",
         "direct": "تفضّل المراسلة المباشرة؟", "address": "المكتب"},
+}
+
+CREDITS = {
+ "en": {"title": "Photo Credits | EL-SHIMY", "meta": "Credits and licences for the photographs used on the EL-SHIMY website.", "h1": "Photo credits",
+        "lead": "Product photographs are illustrative and come from Wikimedia Commons under the licences shown. They are not photographs of EL-SHIMY shipments.",
+        "cols": ["Image", "Photographer", "Licence", "Source"], "unsplash": "Strawberries, oranges, mandarins, mangoes, watermelon and grapes: illustrative stock photographs from Unsplash, used under the Unsplash Licence.", "view": "File page"},
+ "ar": {"title": "حقوق الصور | الشيمي", "meta": "بيانات المصور والترخيص للصور المستخدمة في موقع الشيمي.", "h1": "حقوق الصور",
+        "lead": "صور المنتجات توضيحية ومأخوذة من ويكيميديا كومنز بموجب التراخيص الموضحة. وهي ليست صوراً لشحنات الشيمي.",
+        "cols": ["الصورة", "المصوّر", "الترخيص", "المصدر"], "unsplash": "الفراولة والبرتقال واليوسفي والمانجو والبطيخ والعنب: صور توضيحية من Unsplash مستخدمة بموجب ترخيص Unsplash.", "view": "صفحة الملف"},
 }
