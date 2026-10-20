@@ -82,7 +82,7 @@ V["en"]["freight"] = {
  "inco_note": "Illustrative summary of Incoterms® 2020. Actual obligations, risk transfer and costs depend on the term, the named place and your sales contract. FOB and CIF apply to sea freight; FCA and CIP are the usual alternatives for air and containerised transport. Always confirm in the contract.",
  "inco_plan_h": "To plan your shipment, tell us:", "inco_plan": ["Preferred Incoterm", "Destination port or airport", "Target arrival window", "Volume and packing"],
  "cta_h": "Planning a shipment?", "cta_p": "Share your product, volume, destination and preferred Incoterm. We will come back with a shipping plan and quote.",
- "title": "Freight & Customs for Egyptian Produce | EL-SHIMY", "meta": "Sea, air and land freight, customs arrangements and export documents for Egyptian fresh produce and frozen products, coordinated by EL-SHIMY.",
+ "title": "Freight & Customs for Egyptian Produce | EL-SHIMY", "meta": "Reefer container shipping from Egypt for fresh produce, plus air and land freight, customs clearance and export documents, coordinated by EL-SHIMY.",
  "img_alt": "Illustration of a container ship, port crane and cargo aircraft",
 }
 V["ar"]["freight"] = {
@@ -121,7 +121,7 @@ V["ar"]["freight"] = {
  "inco_note": "ملخص توضيحي لقواعد Incoterms® 2020. تعتمد الالتزامات الفعلية ونقل المخاطر والتكاليف على الشرط والمكان المحدد وعقد البيع. ينطبق FOB وCIF على الشحن البحري، أما FCA وCIP فبديلان شائعان للشحن الجوي وبالحاويات. أكّد ذلك دائماً في العقد.",
  "inco_plan_h": "لتخطيط شحنتك أخبرنا بـ:", "inco_plan": ["الـ Incoterm المفضل", "ميناء أو مطار الوصول", "موعد الوصول المستهدف", "الكمية والتعبئة"],
  "cta_h": "تخطط لشحنة؟", "cta_p": "شارك المنتج والكمية والوجهة والـ Incoterm المفضل. سنعود إليك بخطة شحن وعرض سعر.",
- "title": "الشحن والتخليص الجمركي للمنتجات المصرية | الشيمي", "meta": "شحن بحري وجوي وبري وترتيبات جمركية ومستندات تصدير للمنتجات المصرية الطازجة والمجمدة بتنسيق الشيمي.",
+ "title": "الشحن والتخليص الجمركي للمنتجات المصرية | الشيمي", "meta": "حاويات مبردة لشحن الفواكه من مصر، وشحن جوي وبري وتخليص جمركي ومستندات تصدير للخضروات والفواكه الطازجة والمجمدة بتنسيق الشيمي.",
  "img_alt": "رسم توضيحي لسفينة حاويات ورافعة ميناء وطائرة شحن",
 }
 
@@ -183,7 +183,7 @@ V["ar"]["quality"] = {
  "honest_t": "ماذا يعني ذلك عملياً",
  "honest": ["ننسق مع مزارع ومحطات تعبئة شريكة، ولا نملك مزارع أو محطات تعبئة خاصة بنا.", "لا نشغّل مختبراً خاصاً بنا.", "لا نضمن خلوّ الشحنة من العيوب تماماً؛ تُتفق حدود التفاوت في المواصفة لكل طلب."],
  "cta_h": "ناقش متطلبات الجودة لديك", "cta_p": "أخبرنا بالمنتج والمواصفة وأي معايير أو فحوص تحتاجها، وسنؤكد ما يمكن ترتيبه.",
- "title": "تنسيق الجودة وسلامة الغذاء | الشيمي", "meta": "كيف ينسق الشيمي المواصفات والفحص ومستندات التتبع وتخطيط سلسلة التبريد لصادرات المنتجات المصرية.",
+ "title": "تنسيق الجودة وسلامة الغذاء | الشيمي", "meta": "كيف ينسق الشيمي المواصفات والفحص ومستندات التتبع وتخطيط سلسلة التبريد لصادرات الفواكه والخضروات المصرية، مع مواصفات واضحة قبل الشحن.",
  "hero_alt": "برتقال مصري بأوراقه (صورة توضيحية)",
 }
 
@@ -234,7 +234,7 @@ V["ar"]["services"] = {
  "proc": [("send", "أرسل استفسارك", "المنتج والصنف والحجم والتعبئة والكمية وميناء الوصول والـ Incoterm."), ("search", "نؤكد التوافر", "مطابقة المزارع ومحطات التعبئة الشريكة مع مواصفاتك."),
           ("doc", "استلم عرضاً مكتوباً", "المواصفات والتعبئة والشروط والسعر في وثيقة واحدة."), ("ship", "خطط الشحنة", "تنسيق التعبئة والشحن والمستندات وفق جدولك.")],
  "cta_h": "أخبرنا بما تبحث عنه", "cta_p": "أرسل المنتج والكمية والوجهة وسنعود إليك بعرض مبني على المواصفات.",
- "title": "خدمات التوريد والتصدير من مصر | الشيمي", "meta": "كيف يوفّر الشيمي المنتجات المصرية عبر مزارع ومحطات تعبئة شريكة وينسق مستندات التصدير وفحوص الجودة والشحن.",
+ "title": "خدمات التوريد والتصدير من مصر | الشيمي", "meta": "كيف يوفّر الشيمي الفواكه والخضروات المصرية عبر مزارع ومحطات تعبئة شريكة وينسق مستندات التصدير وفحوص الجودة والشحن للمستوردين.",
 }
 
 # ---- About ----
@@ -325,7 +325,7 @@ V["en"]["guide"] = {"eyebrow": "Buyer guide", "h1": "How to Request a Produce Qu
          ("Can different products share a container?", "Sometimes, if their temperature and ventilation needs are compatible. Tell us your products and volumes and we will confirm what is feasible."),
          ("Can you handle private label or specific labelling?", "Labelling and private-label needs can be discussed. Include them in your enquiry."),
          ("Which documents will I receive?", "It depends on the product and destination. Commonly an invoice, packing list, shipping document and, where required, phytosanitary and origin certificates.")],
- "title": "Checklist: How to Request a Produce Quote from an Egyptian Exporter", "meta": "What to include when asking an Egyptian exporter for a fruit or vegetable quote: product, size, packing, quantity, Incoterm, documents and shipping."}
+ "title": "How to Request a Produce Quote from Egypt | EL-SHIMY", "meta": "What to include when asking an Egyptian exporter for a fruit or vegetable quote: product, size, packing, quantity, Incoterm, documents and shipping."}
 V["ar"]["guide"] = {"eyebrow": "دليل المشتري", "h1": "كيف تطلب عرض سعر للمنتجات الزراعية من مُصدّر مصري",
  "lead": "الاستفسار الدقيق يعطي عرضاً دقيقاً. استخدم هذه القائمة ليتمكن المُصدّر من التسعير بدقة دون تبادل رسائل متكرر.",
  "items": [("tag", "المنتج والصنف", "اذكر المنتج والصنف إن عرفته (مثل برتقال أبو سرة أو فالنسيا). وإذا كنت مرناً فاذكر ذلك ليقترح المُصدّر أفضل خيار للموسم."),

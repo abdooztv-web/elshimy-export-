@@ -1,0 +1,242 @@
+﻿keyword,language,intent,category,product_slug,target_page_url,current_status,priority,notes,search_volume
+Egyptian fruit and vegetable exporter,en,commercial,company,,https://elshimytrading.com/en/,in_title,high,"core head term; found in: title(exact), body(exact)",unvalidated
+Egyptian fruit exporter,en,commercial,company,,https://elshimytrading.com/en/,in_title,high,"found in: title(near), body(near)",unvalidated
+Egyptian vegetable exporter,en,commercial,company,,https://elshimytrading.com/en/,in_title,high,"found in: title(near), body(near)",unvalidated
+fresh produce exporter Egypt,en,commercial,company,,https://elshimytrading.com/en/,in_body,high,found in: meta(near),unvalidated
+fresh produce supplier Egypt,en,commercial,company,,https://elshimytrading.com/en/,in_body,high,found in: meta(near),unvalidated
+fruit and vegetable export company Egypt,en,commercial,company,,https://elshimytrading.com/en/,missing,high,,unvalidated
+fresh and frozen produce supplier Egypt,en,commercial,company,,https://elshimytrading.com/en/,missing,medium,fresh + IQF positioning,unvalidated
+Egyptian agricultural exporter,en,commercial,company,,https://elshimytrading.com/en/about/,missing,medium,,unvalidated
+Egyptian agricultural products exporter,en,commercial,company,,https://elshimytrading.com/en/about/,missing,medium,,unvalidated
+Egyptian produce supplier for importers,en,commercial,company,,https://elshimytrading.com/en/sourcing-export/,missing,medium,B2B phrasing,unvalidated
+wholesale Egyptian fruits and vegetables,en,commercial,company,,https://elshimytrading.com/en/products/,missing,medium,wholesale intent,unvalidated
+fresh produce sourcing agent Egypt,en,commercial,company,,https://elshimytrading.com/en/sourcing-export/,missing,medium,matches partner-farm model; do not imply ownership of farms,unvalidated
+Egyptian food trading company,en,commercial,company,,https://elshimytrading.com/en/about/,missing,low,,unvalidated
+Egypt food export company,en,commercial,company,,https://elshimytrading.com/en/,missing,low,,unvalidated
+EL-SHIMY,en,navigational,company,,https://elshimytrading.com/en/,in_title,high,"brand; found in: title(exact), meta(exact), h2(exact), body(exact)",unvalidated
+Elshimy for Trading & Agencies,en,navigational,company,,https://elshimytrading.com/en/,in_body,high,brand / legal name; found in: body(exact),unvalidated
+El-Shimy trading Egypt,en,navigational,company,,https://elshimytrading.com/en/,missing,medium,brand + country,unvalidated
+مصدر فواكه وخضروات مصري,ar,commercial,company,,https://elshimytrading.com/ar/,in_title,high,core head term; found in: title(exact),unvalidated
+شركة تصدير خضروات وفواكه من مصر,ar,commercial,company,,https://elshimytrading.com/ar/,in_body,high,found in: meta(exact),unvalidated
+مورد خضروات وفواكه طازجة من مصر,ar,commercial,company,,https://elshimytrading.com/ar/,missing,high,مورد = supplier,unvalidated
+مصدر فاكهة مصري,ar,commercial,company,,https://elshimytrading.com/ar/,in_body,high,found in: body(near),unvalidated
+مصدر خضروات مصري,ar,commercial,company,,https://elshimytrading.com/ar/,in_title,high,"found in: title(near), body(near)",unvalidated
+شركة تصدير حاصلات زراعية مصرية,ar,commercial,company,,https://elshimytrading.com/ar/about/,missing,medium,الحاصلات الزراعية is the formal Egyptian trade term,unvalidated
+تصدير الحاصلات الزراعية المصرية,ar,commercial,company,,https://elshimytrading.com/ar/about/,missing,medium,,unvalidated
+مورد فواكه بالجملة في مصر,ar,commercial,company,,https://elshimytrading.com/ar/products/,missing,medium,wholesale intent,unvalidated
+مصدرين مصريين للفواكه والخضار,ar,commercial,company,,https://elshimytrading.com/ar/,missing,low,خضار is the Gulf/Levant spelling of خضروات,unvalidated
+منتجات طازجة ومجمدة من مصر,ar,commercial,company,,https://elshimytrading.com/ar/,missing,medium,fresh + IQF positioning,unvalidated
+شركة تجارة وتصدير مصرية,ar,commercial,company,,https://elshimytrading.com/ar/about/,missing,low,,unvalidated
+وكيل توريد فواكه وخضروات من مصر,ar,commercial,company,,https://elshimytrading.com/ar/sourcing-export/,missing,medium,partner-farm sourcing model,unvalidated
+الشيمي للتجارة والتوكيلات,ar,navigational,company,,https://elshimytrading.com/ar/,in_body,high,brand / legal name; found in: body(exact),unvalidated
+الشيمي للتصدير,ar,navigational,company,,https://elshimytrading.com/ar/,missing,medium,brand,unvalidated
+شركة الشيمي مصر,ar,navigational,company,,https://elshimytrading.com/ar/,missing,medium,brand + country,unvalidated
+Egyptian potatoes,en,commercial,product,egyptian-potatoes,https://elshimytrading.com/en/products/egyptian-potatoes/,in_title,high,"found in: title(exact), h1(exact), meta(near), body(exact)",unvalidated
+Egyptian potato exporter,en,commercial,product,egyptian-potatoes,https://elshimytrading.com/en/products/egyptian-potatoes/,in_body,high,"found in: meta(exact), body(exact)",unvalidated
+potatoes supplier Egypt,en,commercial,product,egyptian-potatoes,https://elshimytrading.com/en/products/egyptian-potatoes/,in_body,high,found in: meta(exact),unvalidated
+Egypt potatoes export,en,commercial,product,egyptian-potatoes,https://elshimytrading.com/en/products/egyptian-potatoes/,missing,medium,,unvalidated
+Spunta potatoes Egypt,en,commercial,product,egyptian-potatoes,https://elshimytrading.com/en/products/egyptian-potatoes/,missing,medium,variety,unvalidated
+Diamant potatoes Egypt,en,commercial,product,egyptian-potatoes,https://elshimytrading.com/en/products/egyptian-potatoes/,missing,low,variety,unvalidated
+fresh table potatoes wholesale,en,commercial,product,egyptian-potatoes,https://elshimytrading.com/en/products/egyptian-potatoes/,missing,low,,unvalidated
+بطاطس مصرية,ar,commercial,product,egyptian-potatoes,https://elshimytrading.com/ar/products/egyptian-potatoes/,in_title,high,"Egypt spelling; found in: title(exact), h1(exact), meta(exact), body(exact)",unvalidated
+بطاطا مصرية,ar,commercial,product,egyptian-potatoes,https://elshimytrading.com/ar/products/egyptian-potatoes/,in_body,high,Gulf/Levant spelling of potato; found in: body(exact),unvalidated
+تصدير البطاطس المصرية,ar,commercial,product,egyptian-potatoes,https://elshimytrading.com/ar/products/egyptian-potatoes/,in_title,high,found in: title(exact),unvalidated
+مورد بطاطس مصري,ar,commercial,product,egyptian-potatoes,https://elshimytrading.com/ar/products/egyptian-potatoes/,in_title,high,found in: title(exact),unvalidated
+مصدر بطاطس في مصر,ar,commercial,product,egyptian-potatoes,https://elshimytrading.com/ar/products/egyptian-potatoes/,missing,medium,,unvalidated
+بطاطس سبونتا مصرية,ar,commercial,product,egyptian-potatoes,https://elshimytrading.com/ar/products/egyptian-potatoes/,missing,medium,variety,unvalidated
+بطاطس للتصدير,ar,commercial,product,egyptian-potatoes,https://elshimytrading.com/ar/products/egyptian-potatoes/,missing,medium,,unvalidated
+Egyptian yellow onions,en,commercial,product,yellow-onions,https://elshimytrading.com/en/products/yellow-onions/,in_title,high,"found in: title(exact), h1(near), body(exact)",unvalidated
+golden onions Egypt,en,commercial,product,yellow-onions,https://elshimytrading.com/en/products/yellow-onions/,missing,medium,,unvalidated
+yellow onion exporter Egypt,en,commercial,product,yellow-onions,https://elshimytrading.com/en/products/yellow-onions/,in_body,high,found in: meta(near),unvalidated
+onions supplier Egypt,en,commercial,product,yellow-onions,https://elshimytrading.com/en/products/yellow-onions/,in_body,high,found in: meta(exact),unvalidated
+Egyptian onions export,en,commercial,product,yellow-onions,https://elshimytrading.com/en/products/yellow-onions/,in_body,high,found in: meta(exact),unvalidated
+بصل أصفر مصري,ar,commercial,product,yellow-onions,https://elshimytrading.com/ar/products/yellow-onions/,in_title,high,"found in: title(exact), h1(near), meta(near), body(near)",unvalidated
+بصل ذهبي مصري,ar,commercial,product,yellow-onions,https://elshimytrading.com/ar/products/yellow-onions/,in_h1,medium,"found in: h1(near), meta(near), body(near)",unvalidated
+تصدير البصل المصري,ar,commercial,product,yellow-onions,https://elshimytrading.com/ar/products/yellow-onions/,in_title,high,found in: title(near),unvalidated
+مورد بصل مصري,ar,commercial,product,yellow-onions,https://elshimytrading.com/ar/products/yellow-onions/,in_title,high,found in: title(exact),unvalidated
+مصدر بصل في مصر,ar,commercial,product,yellow-onions,https://elshimytrading.com/ar/products/yellow-onions/,missing,medium,,unvalidated
+Egyptian red onions,en,commercial,product,red-onions,https://elshimytrading.com/en/products/red-onions/,in_title,high,"found in: title(exact), h1(exact), body(exact)",unvalidated
+red onion exporter Egypt,en,commercial,product,red-onions,https://elshimytrading.com/en/products/red-onions/,in_body,medium,"found in: meta(exact), body(exact)",unvalidated
+red onions supplier Egypt,en,commercial,product,red-onions,https://elshimytrading.com/en/products/red-onions/,missing,medium,,unvalidated
+بصل أحمر مصري,ar,commercial,product,red-onions,https://elshimytrading.com/ar/products/red-onions/,in_title,high,"found in: title(exact), h1(exact), meta(exact), body(exact)",unvalidated
+تصدير البصل الأحمر,ar,commercial,product,red-onions,https://elshimytrading.com/ar/products/red-onions/,in_title,medium,found in: title(exact),unvalidated
+مورد بصل أحمر,ar,commercial,product,red-onions,https://elshimytrading.com/ar/products/red-onions/,in_title,medium,found in: title(exact),unvalidated
+Egyptian tomatoes,en,commercial,product,tomatoes,https://elshimytrading.com/en/products/tomatoes/,in_title,medium,"found in: title(exact), h1(exact), body(exact)",unvalidated
+tomato exporter Egypt,en,commercial,product,tomatoes,https://elshimytrading.com/en/products/tomatoes/,missing,medium,,unvalidated
+fresh tomatoes supplier Egypt,en,commercial,product,tomatoes,https://elshimytrading.com/en/products/tomatoes/,missing,medium,,unvalidated
+طماطم مصرية,ar,commercial,product,tomatoes,https://elshimytrading.com/ar/products/tomatoes/,in_title,medium,"Egypt/Gulf spelling; found in: title(exact), h1(exact), meta(exact), body(exact)",unvalidated
+بندورة مصرية,ar,commercial,product,tomatoes,https://elshimytrading.com/ar/products/tomatoes/,in_body,low,Levant spelling; found in: body(exact),unvalidated
+تصدير الطماطم المصرية,ar,commercial,product,tomatoes,https://elshimytrading.com/ar/products/tomatoes/,in_title,medium,found in: title(exact),unvalidated
+مورد طماطم من مصر,ar,commercial,product,tomatoes,https://elshimytrading.com/ar/products/tomatoes/,missing,medium,,unvalidated
+Egyptian oranges,en,commercial,product,egyptian-oranges,https://elshimytrading.com/en/products/egyptian-oranges/,in_title,high,"found in: title(exact), h1(exact), meta(near), body(exact)",unvalidated
+Egyptian orange exporter,en,commercial,product,egyptian-oranges,https://elshimytrading.com/en/products/egyptian-oranges/,in_title,high,"found in: title(exact), body(exact)",unvalidated
+oranges supplier Egypt,en,commercial,product,egyptian-oranges,https://elshimytrading.com/en/products/egyptian-oranges/,in_body,high,found in: meta(exact),unvalidated
+Egypt oranges export,en,commercial,product,egyptian-oranges,https://elshimytrading.com/en/products/egyptian-oranges/,in_body,high,found in: meta(exact),unvalidated
+Navel oranges Egypt,en,commercial,product,egyptian-oranges,https://elshimytrading.com/en/products/egyptian-oranges/,in_body,high,variety; found in: body(exact),unvalidated
+Valencia oranges Egypt,en,commercial,product,egyptian-oranges,https://elshimytrading.com/en/products/egyptian-oranges/,in_body,high,variety; found in: body(exact),unvalidated
+Egyptian citrus exporter,en,commercial,product,egyptian-oranges,https://elshimytrading.com/en/products/egyptian-oranges/,in_body,high,category term; found in: meta(exact),unvalidated
+برتقال مصري,ar,commercial,product,egyptian-oranges,https://elshimytrading.com/ar/products/egyptian-oranges/,in_title,high,"found in: title(exact), h1(exact), meta(near), body(exact)",unvalidated
+تصدير البرتقال المصري,ar,commercial,product,egyptian-oranges,https://elshimytrading.com/ar/products/egyptian-oranges/,in_title,high,found in: title(exact),unvalidated
+مصدر برتقال في مصر,ar,commercial,product,egyptian-oranges,https://elshimytrading.com/ar/products/egyptian-oranges/,in_body,high,found in: meta(exact),unvalidated
+برتقال أبو سرة,ar,commercial,product,egyptian-oranges,https://elshimytrading.com/ar/products/egyptian-oranges/,in_title,high,"Navel in Egypt/Gulf; found in: title(near), meta(exact)",unvalidated
+برتقال فالنسيا مصري,ar,commercial,product,egyptian-oranges,https://elshimytrading.com/ar/products/egyptian-oranges/,in_body,high,found in: meta(exact),unvalidated
+مورد برتقال بالجملة,ar,commercial,product,egyptian-oranges,https://elshimytrading.com/ar/products/egyptian-oranges/,missing,medium,,unvalidated
+مصدر حمضيات مصري,ar,commercial,product,egyptian-oranges,https://elshimytrading.com/ar/products/egyptian-oranges/,in_body,high,citrus category; found in: meta(exact),unvalidated
+Egyptian mandarins,en,commercial,product,mandarins,https://elshimytrading.com/en/products/mandarins/,in_title,high,"found in: title(exact), h1(exact), body(exact)",unvalidated
+mandarin exporter Egypt,en,commercial,product,mandarins,https://elshimytrading.com/en/products/mandarins/,in_body,high,found in: meta(exact),unvalidated
+Egyptian tangerines,en,commercial,product,mandarins,https://elshimytrading.com/en/products/mandarins/,missing,medium,US/UK variant,unvalidated
+Egypt mandarin oranges export,en,commercial,product,mandarins,https://elshimytrading.com/en/products/mandarins/,missing,medium,,unvalidated
+يوسفي مصري,ar,commercial,product,mandarins,https://elshimytrading.com/ar/products/mandarins/,in_title,high,"Egypt term; found in: title(exact), h1(exact), meta(exact), body(exact)",unvalidated
+ماندرين مصري,ar,commercial,product,mandarins,https://elshimytrading.com/ar/products/mandarins/,in_body,medium,Gulf term; found in: body(exact),unvalidated
+تصدير اليوسفي المصري,ar,commercial,product,mandarins,https://elshimytrading.com/ar/products/mandarins/,in_title,high,found in: title(exact),unvalidated
+مورد يوسفي,ar,commercial,product,mandarins,https://elshimytrading.com/ar/products/mandarins/,in_title,medium,found in: title(exact),unvalidated
+مندرين للتصدير,ar,commercial,product,mandarins,https://elshimytrading.com/ar/products/mandarins/,missing,low,alt spelling,unvalidated
+Egyptian lemons,en,commercial,product,lemons,https://elshimytrading.com/en/products/lemons/,in_title,high,"found in: title(exact), h1(exact), body(exact)",unvalidated
+lemon exporter Egypt,en,commercial,product,lemons,https://elshimytrading.com/en/products/lemons/,in_body,high,"found in: meta(exact), body(exact)",unvalidated
+Adalia lemons Egypt,en,commercial,product,lemons,https://elshimytrading.com/en/products/lemons/,missing,medium,variety,unvalidated
+Egyptian limes,en,commercial,product,lemons,https://elshimytrading.com/en/products/lemons/,in_h1,medium,"found in: h1(near), body(near)",unvalidated
+lemons supplier Egypt,en,commercial,product,lemons,https://elshimytrading.com/en/products/lemons/,missing,medium,,unvalidated
+ليمون مصري,ar,commercial,product,lemons,https://elshimytrading.com/ar/products/lemons/,in_title,high,"found in: title(exact), h1(exact), meta(exact), body(exact)",unvalidated
+تصدير الليمون المصري,ar,commercial,product,lemons,https://elshimytrading.com/ar/products/lemons/,in_title,high,found in: title(exact),unvalidated
+ليمون أضاليا,ar,commercial,product,lemons,https://elshimytrading.com/ar/products/lemons/,in_title,medium,"variety; found in: title(exact), meta(exact), body(exact)",unvalidated
+ليمون أخضر مصري,ar,commercial,product,lemons,https://elshimytrading.com/ar/products/lemons/,missing,medium,limes,unvalidated
+مورد ليمون,ar,commercial,product,lemons,https://elshimytrading.com/ar/products/lemons/,missing,medium,,unvalidated
+Egyptian strawberries,en,commercial,product,strawberries,https://elshimytrading.com/en/products/strawberries/,in_title,high,"found in: title(exact), h1(exact), body(exact)",unvalidated
+fresh strawberries exporter Egypt,en,commercial,product,strawberries,https://elshimytrading.com/en/products/strawberries/,in_body,high,"found in: meta(near), body(exact)",unvalidated
+strawberries supplier Egypt,en,commercial,product,strawberries,https://elshimytrading.com/en/products/strawberries/,in_body,high,found in: meta(exact),unvalidated
+Egypt strawberry export air freight,en,commercial,product,strawberries,https://elshimytrading.com/en/products/strawberries/,missing,medium,,unvalidated
+فراولة مصرية,ar,commercial,product,strawberries,https://elshimytrading.com/ar/products/strawberries/,in_title,high,"found in: title(exact), h1(exact), meta(exact), body(exact)",unvalidated
+تصدير الفراولة المصرية,ar,commercial,product,strawberries,https://elshimytrading.com/ar/products/strawberries/,in_title,high,found in: title(exact),unvalidated
+مورد فراولة طازجة,ar,commercial,product,strawberries,https://elshimytrading.com/ar/products/strawberries/,in_title,high,"found in: title(exact), meta(near), body(near)",unvalidated
+فريز مصري,ar,commercial,product,strawberries,https://elshimytrading.com/ar/products/strawberries/,in_body,medium,Levant/Gulf term for strawberry; found in: body(exact),unvalidated
+مصدر فراولة في مصر,ar,commercial,product,strawberries,https://elshimytrading.com/ar/products/strawberries/,missing,medium,,unvalidated
+Egyptian pomegranates,en,commercial,product,pomegranates,https://elshimytrading.com/en/products/pomegranates/,in_title,high,"found in: title(exact), h1(exact), body(exact)",unvalidated
+pomegranate exporter Egypt,en,commercial,product,pomegranates,https://elshimytrading.com/en/products/pomegranates/,in_body,high,"found in: meta(exact), body(exact)",unvalidated
+pomegranate supplier Egypt,en,commercial,product,pomegranates,https://elshimytrading.com/en/products/pomegranates/,missing,medium,,unvalidated
+Wonderful pomegranate Egypt,en,commercial,product,pomegranates,https://elshimytrading.com/en/products/pomegranates/,missing,medium,variety,unvalidated
+رمان مصري,ar,commercial,product,pomegranates,https://elshimytrading.com/ar/products/pomegranates/,in_title,high,"found in: title(exact), h1(exact), meta(exact), body(exact)",unvalidated
+تصدير الرمان المصري,ar,commercial,product,pomegranates,https://elshimytrading.com/ar/products/pomegranates/,in_title,high,found in: title(exact),unvalidated
+مورد رمان,ar,commercial,product,pomegranates,https://elshimytrading.com/ar/products/pomegranates/,in_title,medium,found in: title(exact),unvalidated
+رمان وندرفول,ar,commercial,product,pomegranates,https://elshimytrading.com/ar/products/pomegranates/,in_title,medium,variety; found in: title(exact),unvalidated
+Egyptian grapes,en,commercial,product,grapes,https://elshimytrading.com/en/products/grapes/,in_title,high,"found in: title(exact), h1(exact), body(exact)",unvalidated
+grape exporter Egypt,en,commercial,product,grapes,https://elshimytrading.com/en/products/grapes/,in_body,high,found in: body(exact),unvalidated
+seedless grapes Egypt,en,commercial,product,grapes,https://elshimytrading.com/en/products/grapes/,in_body,high,found in: meta(exact),unvalidated
+Egyptian red seedless grapes,en,commercial,product,grapes,https://elshimytrading.com/en/products/grapes/,missing,medium,,unvalidated
+table grapes supplier Egypt,en,commercial,product,grapes,https://elshimytrading.com/en/products/grapes/,missing,medium,,unvalidated
+عنب مصري,ar,commercial,product,grapes,https://elshimytrading.com/ar/products/grapes/,in_title,high,"found in: title(exact), h1(exact), meta(exact), body(exact)",unvalidated
+تصدير العنب المصري,ar,commercial,product,grapes,https://elshimytrading.com/ar/products/grapes/,in_title,high,found in: title(exact),unvalidated
+عنب بدون بذور مصري,ar,commercial,product,grapes,https://elshimytrading.com/ar/products/grapes/,in_title,high,found in: title(exact),unvalidated
+عنب أحمر بدون بذور,ar,commercial,product,grapes,https://elshimytrading.com/ar/products/grapes/,missing,medium,,unvalidated
+مورد عنب,ar,commercial,product,grapes,https://elshimytrading.com/ar/products/grapes/,missing,medium,,unvalidated
+Egyptian mangoes,en,commercial,product,mangoes,https://elshimytrading.com/en/products/mangoes/,in_title,medium,"found in: title(exact), h1(exact), body(exact)",unvalidated
+mango exporter Egypt,en,commercial,product,mangoes,https://elshimytrading.com/en/products/mangoes/,in_body,medium,found in: meta(exact),unvalidated
+Keitt mango Egypt,en,commercial,product,mangoes,https://elshimytrading.com/en/products/mangoes/,missing,medium,variety,unvalidated
+Kent mango Egypt,en,commercial,product,mangoes,https://elshimytrading.com/en/products/mangoes/,missing,low,variety,unvalidated
+مانجو مصري,ar,commercial,product,mangoes,https://elshimytrading.com/ar/products/mangoes/,in_title,medium,"Egypt/Gulf spelling; found in: title(exact), h1(exact), meta(exact), body(exact)",unvalidated
+مانجا مصرية,ar,commercial,product,mangoes,https://elshimytrading.com/ar/products/mangoes/,in_body,medium,Levant spelling; found in: body(exact),unvalidated
+تصدير المانجو المصري,ar,commercial,product,mangoes,https://elshimytrading.com/ar/products/mangoes/,in_title,medium,found in: title(exact),unvalidated
+مانجو كيت,ar,commercial,product,mangoes,https://elshimytrading.com/ar/products/mangoes/,in_title,low,"variety; found in: title(exact), meta(near)",unvalidated
+مانجو عويس,ar,commercial,product,mangoes,https://elshimytrading.com/ar/products/mangoes/,in_title,low,Egyptian variety; found in: title(near),unvalidated
+Egyptian dates,en,commercial,product,dates,https://elshimytrading.com/en/products/dates/,in_title,medium,"found in: title(exact), h1(exact), meta(exact), body(exact)",unvalidated
+Barhi dates Egypt,en,commercial,product,dates,https://elshimytrading.com/en/products/dates/,missing,medium,,unvalidated
+fresh dates exporter Egypt,en,commercial,product,dates,https://elshimytrading.com/en/products/dates/,missing,medium,,unvalidated
+بلح مصري,ar,commercial,product,dates,https://elshimytrading.com/ar/products/dates/,in_title,medium,"Egypt term for fresh dates; found in: title(near), h1(near), meta(near), body(near)",unvalidated
+تمور مصرية,ar,commercial,product,dates,https://elshimytrading.com/ar/products/dates/,in_body,medium,"found in: meta(exact), body(exact)",unvalidated
+بلح برحي,ar,commercial,product,dates,https://elshimytrading.com/ar/products/dates/,in_title,medium,"found in: title(exact), meta(exact)",unvalidated
+تصدير البلح المصري,ar,commercial,product,dates,https://elshimytrading.com/ar/products/dates/,in_title,medium,found in: title(near),unvalidated
+تمر مصري للتصدير,ar,commercial,product,dates,https://elshimytrading.com/ar/products/dates/,missing,low,,unvalidated
+Egyptian guava,en,commercial,product,guava,https://elshimytrading.com/en/products/guava/,in_title,medium,"found in: title(exact), h1(exact), body(exact)",unvalidated
+guava exporter Egypt,en,commercial,product,guava,https://elshimytrading.com/en/products/guava/,in_body,medium,found in: meta(exact),unvalidated
+جوافة مصرية,ar,commercial,product,guava,https://elshimytrading.com/ar/products/guava/,in_title,medium,"found in: title(exact), h1(exact), meta(exact), body(exact)",unvalidated
+تصدير الجوافة المصرية,ar,commercial,product,guava,https://elshimytrading.com/ar/products/guava/,in_title,medium,found in: title(exact),unvalidated
+Egyptian watermelon,en,commercial,product,watermelon,https://elshimytrading.com/en/products/watermelon/,in_title,medium,"found in: title(exact), h1(exact), body(exact)",unvalidated
+watermelon exporter Egypt,en,commercial,product,watermelon,https://elshimytrading.com/en/products/watermelon/,in_body,medium,found in: meta(exact),unvalidated
+بطيخ مصري,ar,commercial,product,watermelon,https://elshimytrading.com/ar/products/watermelon/,in_title,medium,"found in: title(exact), h1(exact), meta(exact), body(exact)",unvalidated
+تصدير البطيخ المصري,ar,commercial,product,watermelon,https://elshimytrading.com/ar/products/watermelon/,in_title,medium,found in: title(exact),unvalidated
+Egyptian pears,en,commercial,product,pears,https://elshimytrading.com/en/products/pears/,in_title,low,"found in: title(exact), h1(exact), body(exact)",unvalidated
+pear exporter Egypt,en,commercial,product,pears,https://elshimytrading.com/en/products/pears/,in_body,low,found in: meta(exact),unvalidated
+كمثرى مصرية,ar,commercial,product,pears,https://elshimytrading.com/ar/products/pears/,in_title,low,"Egypt/Gulf term; found in: title(exact), h1(exact), meta(exact), body(exact)",unvalidated
+إجاص مصري,ar,commercial,product,pears,https://elshimytrading.com/ar/products/pears/,in_body,low,Levant term; found in: body(exact),unvalidated
+Egyptian apricots,en,commercial,product,stone-fruits,https://elshimytrading.com/en/products/stone-fruits/,in_title,medium,found in: title(exact),unvalidated
+Egyptian peaches,en,commercial,product,stone-fruits,https://elshimytrading.com/en/products/stone-fruits/,in_title,medium,found in: title(near),unvalidated
+Egyptian plums,en,commercial,product,stone-fruits,https://elshimytrading.com/en/products/stone-fruits/,in_title,low,found in: title(near),unvalidated
+Egyptian nectarines,en,commercial,product,stone-fruits,https://elshimytrading.com/en/products/stone-fruits/,missing,low,,unvalidated
+stone fruit exporter Egypt,en,commercial,product,stone-fruits,https://elshimytrading.com/en/products/stone-fruits/,in_body,medium,found in: meta(exact),unvalidated
+مشمش مصري,ar,commercial,product,stone-fruits,https://elshimytrading.com/ar/products/stone-fruits/,in_title,medium,found in: title(near),unvalidated
+خوخ مصري,ar,commercial,product,stone-fruits,https://elshimytrading.com/ar/products/stone-fruits/,missing,medium,Egypt term for peach,unvalidated
+دراق مصري,ar,commercial,product,stone-fruits,https://elshimytrading.com/ar/products/stone-fruits/,in_body,low,Gulf/Levant term for peach; found in: body(near),unvalidated
+برقوق مصري,ar,commercial,product,stone-fruits,https://elshimytrading.com/ar/products/stone-fruits/,in_body,low,"found in: meta(exact), body(near)",unvalidated
+تصدير الفاكهة ذات النواة,ar,commercial,product,stone-fruits,https://elshimytrading.com/ar/products/stone-fruits/,missing,low,,unvalidated
+Egyptian prickly pear,en,commercial,product,prickly-pear,https://elshimytrading.com/en/products/prickly-pear/,in_title,low,found in: title(exact),unvalidated
+cactus pear exporter Egypt,en,commercial,product,prickly-pear,https://elshimytrading.com/en/products/prickly-pear/,in_body,low,found in: meta(exact),unvalidated
+تين شوكي مصري,ar,commercial,product,prickly-pear,https://elshimytrading.com/ar/products/prickly-pear/,in_title,low,"found in: title(exact), meta(exact)",unvalidated
+تصدير التين الشوكي,ar,commercial,product,prickly-pear,https://elshimytrading.com/ar/products/prickly-pear/,in_title,low,found in: title(exact),unvalidated
+IQF strawberries Egypt,en,commercial,product,iqf-strawberries,https://elshimytrading.com/en/products/iqf-strawberries/,in_title,high,found in: title(exact),unvalidated
+frozen strawberries supplier Egypt,en,commercial,product,iqf-strawberries,https://elshimytrading.com/en/products/iqf-strawberries/,in_body,high,found in: meta(exact),unvalidated
+IQF strawberries supplier,en,commercial,product,iqf-strawberries,https://elshimytrading.com/en/products/iqf-strawberries/,in_body,high,manufacturer intent; found in: body(near),unvalidated
+Egyptian frozen strawberries,en,commercial,product,iqf-strawberries,https://elshimytrading.com/en/products/iqf-strawberries/,in_body,high,found in: body(exact),unvalidated
+frozen strawberries for food manufacturers,en,commercial,product,iqf-strawberries,https://elshimytrading.com/en/products/iqf-strawberries/,missing,medium,"only on /en/, /en/products/",unvalidated
+فراولة مجمدة مصرية,ar,commercial,product,iqf-strawberries,https://elshimytrading.com/ar/products/iqf-strawberries/,in_h1,high,"found in: h1(near), meta(near), body(near)",unvalidated
+فراولة IQF,ar,commercial,product,iqf-strawberries,https://elshimytrading.com/ar/products/iqf-strawberries/,in_title,high,"IQF is used in Latin letters in Arabic trade searches; found in: title(exact), h1(near), meta(near), body(near)",unvalidated
+مورد فراولة مجمدة,ar,commercial,product,iqf-strawberries,https://elshimytrading.com/ar/products/iqf-strawberries/,in_title,high,"found in: title(exact), meta(exact), body(exact)",unvalidated
+تصدير الفراولة المجمدة,ar,commercial,product,iqf-strawberries,https://elshimytrading.com/ar/products/iqf-strawberries/,missing,medium,,unvalidated
+فراولة مجمدة للمصانع,ar,commercial,product,iqf-strawberries,https://elshimytrading.com/ar/products/iqf-strawberries/,in_title,medium,found in: title(exact),unvalidated
+IQF blueberries supplier,en,commercial,product,iqf-berries,https://elshimytrading.com/en/products/iqf-berries/,missing,medium,,unvalidated
+frozen raspberries supplier Egypt,en,commercial,product,iqf-berries,https://elshimytrading.com/en/products/iqf-berries/,missing,medium,,unvalidated
+IQF berries Egypt,en,commercial,product,iqf-berries,https://elshimytrading.com/en/products/iqf-berries/,missing,medium,,unvalidated
+frozen blackberries supplier,en,commercial,product,iqf-berries,https://elshimytrading.com/en/products/iqf-berries/,missing,low,,unvalidated
+توت مجمد,ar,commercial,product,iqf-berries,https://elshimytrading.com/ar/products/iqf-berries/,in_title,medium,"found in: title(exact), h1(exact), body(exact)",unvalidated
+توت أزرق مجمد IQF,ar,commercial,product,iqf-berries,https://elshimytrading.com/ar/products/iqf-berries/,missing,medium,blueberry,unvalidated
+توت العليق المجمد,ar,commercial,product,iqf-berries,https://elshimytrading.com/ar/products/iqf-berries/,in_title,low,raspberry; found in: title(near),unvalidated
+مورد توت مجمد,ar,commercial,product,iqf-berries,https://elshimytrading.com/ar/products/iqf-berries/,missing,medium,,unvalidated
+Egyptian produce for Gulf importers,en,commercial,market,,https://elshimytrading.com/en/markets/gulf-countries/,missing,high,priority market #1; NEW PAGE PROPOSED; not covered anywhere today,unvalidated
+export fruit from Egypt to Saudi Arabia,en,commercial,market,,https://elshimytrading.com/en/markets/gulf-countries/,missing,high,NEW PAGE PROPOSED; not covered anywhere today,unvalidated
+Egyptian vegetables exporter to UAE,en,commercial,market,,https://elshimytrading.com/en/markets/gulf-countries/,missing,high,NEW PAGE PROPOSED; not covered anywhere today,unvalidated
+Egyptian oranges Saudi Arabia importers,en,commercial,market,,https://elshimytrading.com/en/markets/gulf-countries/,missing,medium,NEW PAGE PROPOSED; not covered anywhere today,unvalidated
+Egyptian fruit suppliers Kuwait Qatar Oman,en,commercial,market,,https://elshimytrading.com/en/markets/gulf-countries/,missing,low,only target countries once real orders exist; do not claim customers; NEW PAGE PROPOSED; not covered anywhere today,unvalidated
+Egyptian produce exporter to Asia,en,commercial,market,,https://elshimytrading.com/en/markets/,missing,medium,priority market #2,unvalidated
+Egypt fresh produce export markets,en,commercial,market,,https://elshimytrading.com/en/markets/,missing,medium,,unvalidated
+fresh produce supplier for hotels and food distributors,en,commercial,market,,https://elshimytrading.com/en/sourcing-export/,missing,medium,,unvalidated
+تصدير فواكه مصرية إلى السعودية,ar,commercial,market,,https://elshimytrading.com/ar/markets/gulf-countries/,missing,high,NEW PAGE PROPOSED; not covered anywhere today,unvalidated
+مصدر خضروات مصري للإمارات,ar,commercial,market,,https://elshimytrading.com/ar/markets/gulf-countries/,missing,high,NEW PAGE PROPOSED; not covered anywhere today,unvalidated
+موردين فواكه وخضروات لدول الخليج,ar,commercial,market,,https://elshimytrading.com/ar/markets/gulf-countries/,missing,high,دول الخليج; NEW PAGE PROPOSED; not covered anywhere today,unvalidated
+مستورد فواكه مصرية في الخليج,ar,commercial,market,,https://elshimytrading.com/ar/markets/gulf-countries/,missing,medium,importer-side search; NEW PAGE PROPOSED; not covered anywhere today,unvalidated
+تصدير برتقال مصري للسعودية,ar,commercial,market,,https://elshimytrading.com/ar/markets/gulf-countries/,missing,medium,NEW PAGE PROPOSED; not covered anywhere today,unvalidated
+تصدير خضروات وفواكه إلى آسيا,ar,commercial,market,,https://elshimytrading.com/ar/markets/,missing,medium,,unvalidated
+أسواق تصدير الخضروات والفواكه المصرية,ar,commercial,market,,https://elshimytrading.com/ar/markets/,missing,medium,,unvalidated
+مورد فواكه وخضروات للفنادق والموزعين,ar,commercial,market,,https://elshimytrading.com/ar/sourcing-export/,missing,medium,,unvalidated
+how to import fruit and vegetables from Egypt,en,informational,logistics,,https://elshimytrading.com/en/insights/import-fresh-produce-from-egypt/,missing,high,guide proposal; ties to freight + quote pages; NEW PAGE PROPOSED; not covered anywhere today,unvalidated
+import fresh produce from Egypt,en,commercial,logistics,,https://elshimytrading.com/en/insights/import-fresh-produce-from-egypt/,missing,high,NEW PAGE PROPOSED; not covered anywhere today,unvalidated
+reefer container Egypt fresh produce,en,commercial,logistics,,https://elshimytrading.com/en/freight-customs/,in_body,high,found in: meta(near),unvalidated
+sea freight fresh fruit from Egypt,en,commercial,logistics,,https://elshimytrading.com/en/freight-customs/,missing,medium,,unvalidated
+air freight fresh strawberries Egypt,en,commercial,logistics,,https://elshimytrading.com/en/freight-customs/,missing,medium,,unvalidated
+Egypt export customs clearance fresh produce,en,informational,logistics,,https://elshimytrading.com/en/freight-customs/,missing,medium,,unvalidated
+phytosanitary certificate Egypt fruit export,en,informational,logistics,,https://elshimytrading.com/en/freight-customs/,missing,medium,,unvalidated
+export documents for fresh produce from Egypt,en,informational,logistics,,https://elshimytrading.com/en/freight-customs/,missing,medium,,unvalidated
+Incoterms for fresh produce FOB CIF,en,informational,logistics,,https://elshimytrading.com/en/freight-customs/,missing,medium,EXW/FOB/CIF/DAP table already on the page,unvalidated
+door to door delivery fruit from Egypt,en,commercial,logistics,,https://elshimytrading.com/en/freight-customs/,missing,low,only where available; do not promise,unvalidated
+Egyptian produce quote request,en,commercial,logistics,,https://elshimytrading.com/en/contact/,missing,medium,,unvalidated
+كيفية استيراد الفواكه والخضروات من مصر,ar,informational,logistics,,https://elshimytrading.com/ar/insights/import-fresh-produce-from-egypt/,missing,high,guide proposal; NEW PAGE PROPOSED; not covered anywhere today,unvalidated
+استيراد فواكه طازجة من مصر,ar,commercial,logistics,,https://elshimytrading.com/ar/insights/import-fresh-produce-from-egypt/,missing,high,NEW PAGE PROPOSED; not covered anywhere today,unvalidated
+حاويات مبردة لشحن الفواكه من مصر,ar,commercial,logistics,,https://elshimytrading.com/ar/freight-customs/,in_body,high,حاويات مبردة / ريفر; found in: meta(exact),unvalidated
+شحن بحري مبرد من مصر,ar,commercial,logistics,,https://elshimytrading.com/ar/freight-customs/,missing,medium,,unvalidated
+شحن جوي فراولة طازجة من مصر,ar,commercial,logistics,,https://elshimytrading.com/ar/freight-customs/,missing,medium,,unvalidated
+التخليص الجمركي لصادرات الفواكه والخضروات,ar,informational,logistics,,https://elshimytrading.com/ar/freight-customs/,missing,medium,,unvalidated
+شهادة صحة نباتية للتصدير من مصر,ar,informational,logistics,,https://elshimytrading.com/ar/freight-customs/,missing,medium,,unvalidated
+مستندات تصدير الخضروات والفواكه,ar,informational,logistics,,https://elshimytrading.com/ar/freight-customs/,missing,medium,,unvalidated
+شروط التسليم FOB وCIF للخضروات والفواكه,ar,informational,logistics,,https://elshimytrading.com/ar/freight-customs/,missing,low,,unvalidated
+طلب عرض سعر خضروات وفواكه مصرية,ar,commercial,logistics,,https://elshimytrading.com/ar/contact/,missing,medium,never publish fixed prices; quote per enquiry,unvalidated
+fruit export specifications size grade packing,en,informational,quality,,https://elshimytrading.com/en/quality-food-safety/,missing,medium,,unvalidated
+quality control for fresh produce export,en,informational,quality,,https://elshimytrading.com/en/quality-food-safety/,missing,medium,,unvalidated
+pre-shipment inspection fresh fruit,en,informational,quality,,https://elshimytrading.com/en/quality-food-safety/,missing,low,,unvalidated
+fresh produce traceability documents,en,informational,quality,,https://elshimytrading.com/en/quality-food-safety/,missing,low,,unvalidated
+food safety fresh produce Egypt,en,informational,quality,,https://elshimytrading.com/en/quality-food-safety/,missing,low,,unvalidated
+ISO 22000 certified exporter Egypt,en,commercial,quality,,https://elshimytrading.com/en/quality-food-safety/,missing,low,BLOCKED: do not target or claim until SHOW_ISO is verified,unvalidated
+what is IQF frozen fruit,en,informational,quality,,https://elshimytrading.com/en/insights/what-is-iqf-frozen-fruit/,missing,medium,guide proposal; feeds the two IQF product pages; NEW PAGE PROPOSED; not covered anywhere today,unvalidated
+IQF vs block frozen strawberries,en,informational,quality,,https://elshimytrading.com/en/insights/what-is-iqf-frozen-fruit/,missing,low,NEW PAGE PROPOSED; not covered anywhere today,unvalidated
+مواصفات تصدير الفواكه والخضروات,ar,informational,quality,,https://elshimytrading.com/ar/quality-food-safety/,missing,medium,,unvalidated
+مراقبة الجودة في تصدير المنتجات الطازجة,ar,informational,quality,,https://elshimytrading.com/ar/quality-food-safety/,missing,medium,,unvalidated
+فحص الشحنات قبل التصدير,ar,informational,quality,,https://elshimytrading.com/ar/quality-food-safety/,missing,low,,unvalidated
+سلامة الغذاء في تصدير الفواكه,ar,informational,quality,,https://elshimytrading.com/ar/quality-food-safety/,missing,low,,unvalidated
+ما هو التجميد السريع IQF للفواكه,ar,informational,quality,,https://elshimytrading.com/ar/insights/what-is-iqf-frozen-fruit/,missing,medium,guide proposal; NEW PAGE PROPOSED; not covered anywhere today,unvalidated
+الفرق بين IQF والتجميد العادي,ar,informational,quality,,https://elshimytrading.com/ar/insights/what-is-iqf-frozen-fruit/,missing,low,NEW PAGE PROPOSED; not covered anywhere today,unvalidated
