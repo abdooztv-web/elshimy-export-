@@ -6,6 +6,7 @@ import content as C
 import sys
 from icons import SPRITE
 import visual
+from icons import icon
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANGS = ("en", "ar")
@@ -125,13 +126,13 @@ def footer(lang):
     ui = C.UI[lang]
     prods = "".join(f'<li><a href="{url("product", lang, p["slug"])}">{esc(p["name"][lang].split(":")[0])}</a></li>' for p in C.P[:8])
     comp = "".join(f'<li><a href="{url(k, lang)}">{ui["nav"][k]}</a></li>' for k in ("services", "freight", "quality", "markets", "about", "insights"))
-    wa = f'<li><a href="{wa_link(lang)}" rel="noopener" target="_blank">{ui["whatsapp"]}</a></li>' if C.WHATSAPP else ""
+    wa = f'<li>{icon("chat")}<a href="{wa_link(lang)}" rel="noopener" target="_blank">{ui["whatsapp"]}</a></li>' if C.WHATSAPP else ""
     return f'''<footer class="site-footer">
  <div class="wrap grid-4">
   <div><img src="/assets/img/logo-light.png" width="170" height="49" alt="EL-SHIMY" loading="lazy"><p class="foot-tag">{ui["footer_tag"]}</p><p class="small">{C.LEGAL[lang]}</p></div>
   <div><h2 class="foot-h">{ui["footer_products"]}</h2><ul>{prods}<li><a href="{url("products", lang)}">{ui["view_all"]}</a></li></ul></div>
   <div><h2 class="foot-h">{ui["footer_company"]}</h2><ul>{comp}</ul></div>
-  <div><h2 class="foot-h">{ui["footer_contact"]}</h2><ul><li><a href="{url("contact", lang)}">{ui["quote"]}</a></li><li><a href="mailto:{C.EMAIL}">{C.EMAIL}</a></li>{wa}<li class="small">{C.ADDRESS[lang]}</li></ul></div>
+  <div><h2 class="foot-h">{ui["footer_contact"]}</h2><ul class="foot-contact"><li><a href="{url("contact", lang)}">{ui["quote"]}</a></li><li>{icon("mail")}<a href="mailto:{C.EMAIL}">{C.EMAIL}</a></li><li>{icon("phone")}<a href="tel:{C.PHONE}"><bdi dir="ltr">{C.PHONE_DISPLAY}</bdi></a></li>{wa}<li>{icon("pin")}<a href="{C.MAPS_URL}" target="_blank" rel="noopener">{C.ADDRESS[lang]} · {ui["map"]}</a></li><li>{icon("linkedin")}<a href="{C.LINKEDIN}" target="_blank" rel="noopener me">LinkedIn</a></li></ul></div>
  </div>
  <div class="wrap foot-bottom"><p class="small">© {datetime.date.today().year} {C.LEGAL[lang]}. {ui["rights"]}</p><p class="small">{ui["img_note"]} <a href="{url("credits", lang)}">{ui["credits"]}</a></p></div>
 </footer>'''
@@ -211,7 +212,7 @@ def build_home(lang):
 {cta_band(lang)}'''
     org = {"@context": "https://schema.org", "@type": "Organization", "name": C.LEGAL["en"], "alternateName": C.BRAND,
            "url": abs_url("/"), "logo": abs_url("/assets/img/logo.png"), "foundingDate": "2016",
-           "email": C.EMAIL, "address": {"@type": "PostalAddress", "streetAddress": "Office 3, Mall 11, Beverly Hills", "addressLocality": "Giza", "addressCountry": "EG"},
+           "email": C.EMAIL, "telephone": C.PHONE, "sameAs": [C.LINKEDIN], "address": {"@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG"},
            "description": C.PAGES["home"]["en"]["lead"]}
     return page(lang, "home", url("home", lang), a, d["title"], d["meta"], body, ld=[org])
 
@@ -335,7 +336,7 @@ def build_contact(lang):
  <button class="btn btn-primary" type="submit">{f["send"]}</button>
  <div id="form-status" class="status" role="status" aria-live="polite"></div>
 </form>
-<aside class="side"><h2>{f["direct"]}</h2><p><a href="mailto:{C.EMAIL}">{C.EMAIL}</a></p>{wa}<p class="small"><strong>{f["address"]}:</strong> {C.ADDRESS[lang]}</p></aside>
+<aside class="side"><h2>{f["direct"]}</h2><ul class="side-list"><li>{icon("mail")}<a href="mailto:{C.EMAIL}">{C.EMAIL}</a></li><li>{icon("phone")}<a href="tel:{C.PHONE}"><bdi dir="ltr">{C.PHONE_DISPLAY}</bdi></a></li><li>{icon("pin")}<a href="{C.MAPS_URL}" target="_blank" rel="noopener">{C.ADDRESS[lang]} · {ui["map"]}</a></li><li>{icon("linkedin")}<a href="{C.LINKEDIN}" target="_blank" rel="noopener me">LinkedIn</a></li></ul>{wa}</aside>
 </div></section>'''
     return page(lang, "contact", url("contact", lang), a, d["title"], d["meta"], body, ld=[ld])
 

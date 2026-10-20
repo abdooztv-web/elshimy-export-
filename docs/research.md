@@ -8,8 +8,9 @@ Brand EL-SHIMY for Trading & Agencies · established 2016 · Egyptian food tradi
 |---|---|---|
 | ISO 22000 | Reported by company; need certificate, holder, scope, validity, issuing body | `SHOW_ISO = False` |
 | ~400 t exported in 2025 | Verify against shipping records | `SHOW_VOLUME = False` |
-| WhatsApp number | Not supplied. The old `201000000000` was a placeholder and has been removed | `WHATSAPP = ""` |
-| info@elshimy.com, Giza address | Taken from the previous README; confirm they are correct and monitored | `EMAIL`, `ADDRESS` |
+| WhatsApp / phone | Supplied by the owner: 01006679233 (wa.me/201006679233, tel:+201006679233) | `WHATSAPP`, `PHONE` |
+| Email, location, LinkedIn | Supplied by the owner: Info@elshimytrading.com; Google Maps pin (Cairo; no street address given); LinkedIn company page. The old Giza address was dropped | `EMAIL`, `MAPS_URL`, `ADDRESS`, `LINKEDIN` |
+| Domain | Site base URL set to https://elshimytrading.com (email domain and live URL). Old README said elshimy.com | `SITE` |
 | Form backend | None configured; form opens a pre-filled email draft instead of claiming "sent" | `FORM_ENDPOINT = ""` |
 | Alfalfa hay / pellets, grapefruit, fresh berries | Not confirmed as El-Shimy products, so no pages created | – |
 

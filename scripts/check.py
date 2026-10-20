@@ -2,7 +2,9 @@
 import os, re, sys
 from html.parser import HTMLParser
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE = "https://elshimy.com"
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))
+import content as _C
+SITE = _C.SITE
 
 class P(HTMLParser):
     def __init__(s):

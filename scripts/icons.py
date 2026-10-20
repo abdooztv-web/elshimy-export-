@@ -28,6 +28,9 @@ _P = {
  "stamp": '<path d="M4 20h16M6 16h12v4H6zM9 16c0-4-2-4-2-7a5 5 0 0110 0c0 3-2 3-2 7"/>',
  "link": '<path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/>',
  "sprout": '<path d="M12 21V11"/><path d="M12 11C12 7 9 5 5 5c0 4 3 6 7 6zM12 13c0-3 2-5 6-5 0 3-2 5-6 5z"/>',
+ "phone": '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/>',
+ "linkedin": '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v6M8 7.5v.01M12 17v-6M12 13a3 3 0 016 0v4"/>',
+ "chat": '<path d="M4 20l1.5-4A8 8 0 1112 20a8 8 0 01-4-1z"/>',
  "send": '<path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/>',
 }
 SPRITE = '<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">' + "".join(

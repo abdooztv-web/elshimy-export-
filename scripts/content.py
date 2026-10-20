@@ -2,17 +2,20 @@
 """Bilingual content for the El-Shimy website. Edit facts/config here, then run `python scripts/build.py`."""
 
 # ───────────────────────── Configuration / verification flags ─────────────────────────
-SITE = "https://elshimy.com"
+SITE = "https://elshimytrading.com"
 BRAND = "EL-SHIMY"
 LEGAL = {"en": "EL-SHIMY for Trading & Agencies", "ar": "الشيمي للتجارة والتوكيلات"}
-EMAIL = "info@elshimy.com"             # from the previous README - confirm it is monitored
-WHATSAPP = ""                          # digits only incl. country code, e.g. "20xxxxxxxxxx". Empty = WhatsApp links hidden.
+EMAIL = "Info@elshimytrading.com"
+WHATSAPP = "201006679233"             # digits only incl. country code (Egypt +20)
+PHONE = "+201006679233"               # for tel: links
+PHONE_DISPLAY = "01006679233"
+MAPS_URL = "https://maps.app.goo.gl/UpBJH5GZreWoVC9dA"
+LINKEDIN = "https://www.linkedin.com/company/elshimy-for-trading-agencies/"
 FORM_ENDPOINT = ""                     # Formspree/Netlify/own endpoint. Empty = form opens a pre-filled email draft.
 GSC_TOKEN = ""                         # Google Search Console verification token (optional)
 SHOW_ISO = False                       # set True once the ISO 22000 certificate (holder, scope, validity, body) is verified
 SHOW_VOLUME = False                    # set True once ~400 t exported in 2025 is verified against shipping records
-ADDRESS = {"en": "Office 3, Mall 11, Beverly Hills, Giza, Egypt",
-           "ar": "مكتب 3، مول 11، بيفرلي هيلز، الجيزة، مصر"}  # from previous site - confirm
+ADDRESS = {"en": "Cairo, Egypt", "ar": "القاهرة، مصر"}  # pin from the Google Maps link (30.0807, 31.3736); add street address when confirmed
 
 # ───────────────────────── UI strings ─────────────────────────
 UI = {
@@ -23,7 +26,7 @@ UI = {
   "quote": "Request a Quote", "lang_name": "العربية", "lang_label": "Read this page in Arabic",
   "home": "Home", "breadcrumb": "Breadcrumb", "footer_tag": "Egyptian Products. Global Markets.",
   "footer_products": "Products", "footer_company": "Company", "footer_contact": "Contact",
-  "img_note": "Images are illustrative stock photography unless captioned otherwise.", "credits": "Photo credits",
+  "img_note": "Images are illustrative stock photography unless captioned otherwise.", "credits": "Photo credits", "map": "View on Google Maps",
   "rights": "All rights reserved.", "whatsapp": "WhatsApp", "email_us": "Email us",
   "view_all": "View all products", "learn_more": "Learn more", "request_quote_for": "Request a quote for",
   "fresh": "Fresh", "frozen": "Frozen (IQF)", "veg": "Vegetables", "fruit": "Fruits", "frozen_cat": "Frozen Products",
@@ -41,7 +44,7 @@ UI = {
   "quote": "اطلب عرض سعر", "lang_name": "English", "lang_label": "اقرأ هذه الصفحة بالإنجليزية",
   "home": "الرئيسية", "breadcrumb": "مسار التنقل", "footer_tag": "منتجات مصرية. أسواق عالمية.",
   "footer_products": "المنتجات", "footer_company": "الشركة", "footer_contact": "تواصل معنا",
-  "img_note": "الصور المستخدمة توضيحية من مصادر صور مجانية ما لم يُذكر خلاف ذلك.", "credits": "حقوق الصور",
+  "img_note": "الصور المستخدمة توضيحية من مصادر صور مجانية ما لم يُذكر خلاف ذلك.", "credits": "حقوق الصور", "map": "عرض على خرائط جوجل",
   "rights": "جميع الحقوق محفوظة.", "whatsapp": "واتساب", "email_us": "راسلنا عبر البريد",
   "view_all": "عرض كل المنتجات", "learn_more": "اعرف المزيد", "request_quote_for": "اطلب عرض سعر لـ",
   "fresh": "طازج", "frozen": "مجمد (IQF)", "veg": "الخضروات", "fruit": "الفاكهة", "frozen_cat": "المنتجات المجمدة",

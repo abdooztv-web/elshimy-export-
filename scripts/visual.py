@@ -441,7 +441,7 @@ def build_home(lang):
     mk = "".join(f'<a class="mk reveal" href="{B.url("markets", lang)}"><b>{t}</b><span>{s}</span></a>' for t, s in v["mk"])
     markets = f'<section class="section"><div class="wrap mk-wrap"><div class="reveal"><h2>{v["markets_h"]}</h2><p>{ui["nav"]["markets"]}: {v["mk"][0][0]} · {v["mk"][1][0]}</p><a class="more" href="{B.url("markets", lang)}">{v["markets_a"]} {arrow()}</a></div><div class="mks">{mk}</div></div></section>'
     org = {"@context": "https://schema.org", "@type": "Organization", "name": C.LEGAL["en"], "alternateName": C.BRAND, "url": B.abs_url("/"), "logo": B.abs_url("/assets/img/logo.png"),
-           "foundingDate": "2016", "email": C.EMAIL, "address": {"@type": "PostalAddress", "streetAddress": "Office 3, Mall 11, Beverly Hills", "addressLocality": "Giza", "addressCountry": "EG"},
+           "foundingDate": "2016", "email": C.EMAIL, "telephone": C.PHONE, "sameAs": [C.LINKEDIN], "address": {"@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG"},
            "description": C.PAGES["home"]["en"]["lead"]}
     return B.page(lang, "home", B.url("home", lang), a, d["title"], d["meta"], hero + cats + whysec + feat + proc + frt + markets + B.cta_band(lang), ld=[org])
 
