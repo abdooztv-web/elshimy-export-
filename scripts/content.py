@@ -12,6 +12,7 @@ PHONE_DISPLAY = "01006679233"
 MAPS_URL = "https://maps.app.goo.gl/UpBJH5GZreWoVC9dA"
 LINKEDIN = "https://www.linkedin.com/company/elshimy-for-trading-agencies/"
 FORM_ENDPOINT = ""                     # Formspree/Netlify/own endpoint. Empty = form opens a pre-filled email draft.
+GTM_ID = "GTM-KFSWRKKQ"                 # Google Tag Manager container (GA4 etc. are configured inside GTM)
 GSC_TOKEN = ""                         # Google Search Console verification token (optional)
 SHOW_ISO = False                       # set True once the ISO 22000 certificate (holder, scope, validity, body) is verified
 SHOW_VOLUME = False                    # set True once ~400 t exported in 2025 is verified against shipping records

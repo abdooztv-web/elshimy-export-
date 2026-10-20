@@ -3,6 +3,19 @@
   'use strict';
   var doc = document, root = doc.documentElement;
   root.classList.add('js');
+  /* Analytics: push events to the GTM dataLayer. No personal data (names, emails) is ever pushed. */
+  var dl = window.dataLayer = window.dataLayer || [];
+  var track = function (name, params) { var o = { event: name, page_language: root.lang || '' }; for (var k in params) o[k] = params[k]; dl.push(o); };
+  doc.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+    var h = a.getAttribute('href') || '', m = null;
+    if (h.indexOf('tel:') === 0) m = 'phone'; else if (h.indexOf('mailto:') === 0) m = 'email'; else if (h.indexOf('wa.me') > -1) m = 'whatsapp';
+    else if (h.indexOf('linkedin.com') > -1) m = 'linkedin'; else if (h.indexOf('maps.app.goo.gl') > -1 || h.indexOf('google.com/maps') > -1) m = 'map';
+    if (m) { track('contact_click', { contact_method: m, link_location: a.closest('footer') ? 'footer' : 'page' }); return; }
+    if (a.classList.contains('lang')) track('language_switch', { to_language: a.getAttribute('hreflang') || '' });
+    else if (/\/contact\/(\?|$)/.test(h)) track('quote_cta_click', { link_text: (a.textContent || '').trim().slice(0, 60), link_url: h });
+  });
+
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* Mobile navigation */
@@ -117,6 +130,7 @@
       }
       summary.hidden = true;
       if (form.elements.website.value) return; /* honeypot */
+      track('generate_lead', { lead_product: form.elements.product.value, lead_method: form.dataset.endpoint ? 'form' : 'email_draft', lead_topic: new URLSearchParams(location.search).get('topic') || '' });
       var data = {}; new FormData(form).forEach(function (v, k) { if (k !== 'website') data[k] = v; });
       data.product_label = sel.options[sel.selectedIndex].text; data.language = form.dataset.lang; data.page = location.href;
       var endpoint = form.dataset.endpoint, submit = form.querySelector('[type=submit]');

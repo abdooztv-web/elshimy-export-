@@ -70,7 +70,7 @@ def head(lang, title, desc, path, alt_path, extra_ld=(), og_image="/assets/img/o
     ui = C.UI[lang]
     canon = abs_url(path)
     tags = [
-        '<meta charset="utf-8">', '<meta name="viewport" content="width=device-width, initial-scale=1">',
+        '<meta charset="utf-8">', '<meta name="viewport" content="width=device-width, initial-scale=1">', gtm_head(),
         f"<title>{esc(title)}</title>", f'<meta name="description" content="{esc(desc)}">',
         f'<link rel="canonical" href="{canon}">',
     ]
@@ -98,6 +98,26 @@ def head(lang, title, desc, path, alt_path, extra_ld=(), og_image="/assets/img/o
     for ld in extra_ld:
         tags.append('<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + "</script>")
     return "\n".join(tags)
+
+def gtm_head():
+    if not C.GTM_ID: return ""
+    return GTM_HEAD.replace("__ID__", C.GTM_ID)
+
+def gtm_body():
+    if not C.GTM_ID: return ""
+    return GTM_BODY.replace("__ID__", C.GTM_ID)
+
+GTM_HEAD = """<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','__ID__');</script>
+<!-- End Google Tag Manager -->"""
+
+GTM_BODY = """<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=__ID__" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->"""
 
 def wa_link(lang, text=""):
     if not C.WHATSAPP: return ""
@@ -159,6 +179,7 @@ def page(lang, key, path, alt_path, title, desc, body, ld=(), slug=None, og_imag
 {head(lang, title, desc, path, alt_path, ld, og_image)}
 </head>
 <body class="lang-{lang}">
+{gtm_body()}
 {SPRITE}
 {header(lang, key, alt_path)}
 <main id="main">
@@ -352,6 +373,7 @@ def build_404():
 {head("en", "Page not found | EL-SHIMY · الصفحة غير موجودة", "Page not found.", "/404.html", None, noindex=True, hreflang=False)}
 </head>
 <body class="lang-en">
+{gtm_body()}
 <header class="site-header"><div class="wrap bar"><a class="brand" href="/"><img src="/assets/img/logo.png" width="180" height="52" alt="EL-SHIMY"></a></div></header>
 <main id="main" class="wrap nf-wrap"><h1>404</h1>{out}</main>
 </body></html>
@@ -370,6 +392,7 @@ def build_root():
 {h}
 </head>
 <body class="lang-en chooser">
+{gtm_body()}
 <main id="main" class="chooser-in">
  <img src="/assets/img/logo.png" width="240" height="69" alt="EL-SHIMY">
  <h1 class="sr">EL-SHIMY</h1>
