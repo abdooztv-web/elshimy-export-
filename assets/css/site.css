@@ -471,3 +471,7 @@ h1, h2, h3 { text-wrap: balance; }
 .alt-card h3 { padding-inline-end: 52px; }
 .foot-contact li, .side-list li { display: flex; gap: 10px; align-items: flex-start; } .foot-contact .ic, .side-list .ic { margin-top: .25em; color: #F2B56B; width: 1.1em; height: 1.1em; }
 .side-list { list-style: none; padding: 0; margin: 0 0 12px; } .side-list li { margin-bottom: 12px; word-break: break-word; } .side-list .ic { color: var(--accent-d); }
+[hidden] { display: none !important; }
+.chip .cnt { margin-inline-start: 6px; font-size: .78em; opacity: .7; font-weight: 600; }
+.chip.is-off { opacity: .4; cursor: not-allowed; text-decoration: line-through; }
+.empty { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding: 24px 0; } .empty p { margin: 0; }

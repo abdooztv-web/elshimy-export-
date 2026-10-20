@@ -25,4 +25,4 @@ python -m http.server 8000  # preview at http://localhost:8000
 `python scripts/prepare_assets.py` re-creates the cropped logos and optimised stock photos.
 
 ## Before launch (see docs/research.md)
-Set in `scripts/content.py`: `FORM_ENDPOINT` (Formspree/Netlify/etc.; otherwise the form opens an email draft), `GSC_TOKEN`, and flip `SHOW_ISO` / `SHOW_VOLUME` only after verification. Confirm `EMAIL` and `ADDRESS`. Replace stock photos with real ones. Then submit `https://elshimy.com/sitemap.xml` in Search Console (verification has **not** been done).
+Set in `scripts/content.py`: `FORM_ENDPOINT` (Formspree/Netlify/etc.; otherwise the form opens an email draft), `GSC_TOKEN`, and flip `SHOW_ISO` / `SHOW_VOLUME` only after verification. Confirm `EMAIL` and `ADDRESS`. Replace stock photos with real ones. Then submit `https://elshimytrading.com/sitemap.xml` in Search Console (verification has **not** been done).

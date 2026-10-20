@@ -231,7 +231,7 @@ def build_products_index(lang):
  <div class="chips"><button type="button" class="chip" data-filter-form="all" aria-pressed="true">{ui["fresh"]} + {ui["frozen"]}</button>{forms}</div>
  <label class="search"><span class="sr">{ui["search"]}</span><input type="search" id="p-search" placeholder="{ui["search"]}" autocomplete="off"></label>
 </div>
-<p class="empty" id="p-empty" hidden>{ui["no_results"]}</p>
+<div class="empty" id="p-empty" hidden><p>{ui["no_results"]}</p><button type="button" class="btn btn-primary btn-sm" id="p-reset">{ui["reset"]}</button></div>
 <div id="p-groups">{groups}</div></div></section>
 {cta_band(lang)}'''
     return page(lang, "products", url("products", lang), a, d["title"], d["meta"], body, ld=[ld])
@@ -437,6 +437,30 @@ def main():
     legacy = {"about.html": "/en/about/", "products.html": "/en/products/", "faqs.html": "/en/insights/", "blogs.html": "/en/insights/"}
     for f, t in legacy.items(): write(f, build_redirect(t, t))
     write("sitemap.xml", sitemap(entries))
+    write("llms.txt", f"""# {C.LEGAL["en"]} (EL-SHIMY)
+
+> Egyptian food trading and export partner established in 2016. EL-SHIMY connects international buyers (importers, wholesalers, hotels, food distributors and food manufacturers) with Egyptian fresh fruits, vegetables and selected IQF-frozen strawberries and berries. It sources through partner farms and packhouses (it does not own farms or packing facilities) and coordinates specifications, quality checks, export documents, customs and sea, air and land freight. Priority markets: Gulf countries first, then Asia. Languages: English and Arabic.
+
+Official website: {C.SITE}/
+Email: {C.EMAIL}
+Phone / WhatsApp: {C.PHONE}
+Location: {C.ADDRESS["en"]} ({C.MAPS_URL})
+LinkedIn: {C.LINKEDIN}
+
+## Key pages
+- [Products]({C.SITE}/en/products/): fresh vegetables, fruits and IQF-frozen products
+- [Sourcing & Export]({C.SITE}/en/sourcing-export/)
+- [Freight & Customs]({C.SITE}/en/freight-customs/)
+- [Quality & Food Safety]({C.SITE}/en/quality-food-safety/)
+- [Markets]({C.SITE}/en/markets/)
+- [About]({C.SITE}/en/about/)
+- [Request a quote]({C.SITE}/en/contact/)
+- [Arabic version]({C.SITE}/ar/)
+
+## Notes
+- Specifications, availability and prices are confirmed per order in a written quote; no fixed prices are published.
+- Seasonal windows shown on product pages are indicative industry references, not commitments.
+""")
     write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {abs_url('/sitemap.xml')}\n")
     write("_redirects", "".join(f"/{f}  {t}  301\n" for f, t in legacy.items()))
     write("vercel.json", json.dumps({"trailingSlash": True, "redirects": [{"source": f"/{f}", "destination": t, "permanent": True} for f, t in legacy.items()]}, indent=2) + "\n")

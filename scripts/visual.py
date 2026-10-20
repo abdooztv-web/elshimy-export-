@@ -443,7 +443,8 @@ def build_home(lang):
     org = {"@context": "https://schema.org", "@type": "Organization", "name": C.LEGAL["en"], "alternateName": C.BRAND, "url": B.abs_url("/"), "logo": B.abs_url("/assets/img/logo.png"),
            "foundingDate": "2016", "email": C.EMAIL, "telephone": C.PHONE, "sameAs": [C.LINKEDIN], "address": {"@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG"},
            "description": C.PAGES["home"]["en"]["lead"]}
-    return B.page(lang, "home", B.url("home", lang), a, d["title"], d["meta"], hero + cats + whysec + feat + proc + frt + markets + B.cta_band(lang), ld=[org])
+    site = {"@context": "https://schema.org", "@type": "WebSite", "name": C.BRAND, "url": B.abs_url("/"), "inLanguage": ["en", "ar"], "publisher": {"@type": "Organization", "name": C.LEGAL["en"], "url": B.abs_url("/")}}
+    return B.page(lang, "home", B.url("home", lang), a, d["title"], d["meta"], hero + cats + whysec + feat + proc + frt + markets + B.cta_band(lang), ld=[org, site])
 
 def build_services(lang):
     d = V[lang]["services"]; ui = C.UI[lang]; a = B.url("services", B.other(lang))

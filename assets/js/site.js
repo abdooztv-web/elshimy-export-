@@ -31,22 +31,39 @@
     if (['veg', 'fruit', 'frozen'].indexOf(qp.get('cat')) > -1) state.cat = qp.get('cat');
     var cards = Array.prototype.slice.call(groups.querySelectorAll('.card'));
     var empty = doc.getElementById('p-empty'), search = doc.getElementById('p-search');
+    var match = function (c, st) {
+      return (st.cat === 'all' || c.dataset.cat === st.cat) && (st.form === 'all' || c.dataset.form === st.form) && (!st.q || c.dataset.name.indexOf(st.q) > -1);
+    };
+    var setChip = function (b, count, pressed) {
+      var cnt = b.querySelector('.cnt');
+      if (!cnt) { cnt = doc.createElement('span'); cnt.className = 'cnt'; b.appendChild(cnt); }
+      cnt.textContent = count;
+      b.setAttribute('aria-pressed', String(pressed));
+      /* a chip that would give zero results with the other active filters is disabled instead of leading to an empty page */
+      var dead = count === 0 && !pressed;
+      b.classList.toggle('is-off', dead);
+      if (dead) b.setAttribute('aria-disabled', 'true'); else b.removeAttribute('aria-disabled');
+    };
     var apply = function () {
       var shown = 0;
-      cards.forEach(function (c) {
-        var ok = (state.cat === 'all' || c.dataset.cat === state.cat) &&
-                 (state.form === 'all' || c.dataset.form === state.form) &&
-                 (!state.q || c.dataset.name.indexOf(state.q) > -1);
-        c.hidden = !ok; if (ok) shown++;
-      });
+      cards.forEach(function (c) { var ok = match(c, state); c.hidden = !ok; if (ok) shown++; });
       groups.querySelectorAll('.group').forEach(function (g) { g.hidden = !g.querySelector('.card:not([hidden])'); });
       empty.hidden = shown > 0;
-      doc.querySelectorAll('[data-filter-cat]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.filterCat === state.cat)); });
-      doc.querySelectorAll('[data-filter-form]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.filterForm === state.form)); });
+      doc.querySelectorAll('[data-filter-cat]').forEach(function (b) {
+        var k = b.dataset.filterCat, n = cards.filter(function (c) { return match(c, { cat: k, form: state.form, q: state.q }); }).length;
+        setChip(b, n, k === state.cat);
+      });
+      doc.querySelectorAll('[data-filter-form]').forEach(function (b) {
+        var k = b.dataset.filterForm, n = cards.filter(function (c) { return match(c, { cat: state.cat, form: k, q: state.q }); }).length;
+        setChip(b, n, k === state.form);
+      });
     };
-    doc.querySelectorAll('[data-filter-cat]').forEach(function (b) { b.addEventListener('click', function () { state.cat = b.dataset.filterCat; apply(); }); });
-    doc.querySelectorAll('[data-filter-form]').forEach(function (b) { b.addEventListener('click', function () { state.form = b.dataset.filterForm; apply(); }); });
+    var pick = function (key) { return function () { if (this.getAttribute('aria-disabled') === 'true') return; state[key] = this.dataset[key === 'cat' ? 'filterCat' : 'filterForm']; apply(); }; };
+    doc.querySelectorAll('[data-filter-cat]').forEach(function (b) { b.addEventListener('click', pick('cat')); });
+    doc.querySelectorAll('[data-filter-form]').forEach(function (b) { b.addEventListener('click', pick('form')); });
     search.addEventListener('input', function () { state.q = search.value.trim().toLowerCase(); apply(); });
+    var reset = doc.getElementById('p-reset');
+    if (reset) reset.addEventListener('click', function () { state.cat = 'all'; state.form = 'all'; state.q = ''; search.value = ''; apply(); });
     apply();
   }
 
