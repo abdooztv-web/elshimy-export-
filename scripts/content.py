@@ -174,7 +174,7 @@ add(slug="lemons", cat="fruit", img="lemons", accent="#E3C53B", form="fresh",
  sizes={"en": "Sized by count per carton (e.g. 80–138 for lemons). Confirm your required range.", "ar": "تُصنَّف بالعدد في الكرتونة (مثلاً 80–138 للّيمون). أكّد النطاق المطلوب."},
  packing=PACK_GEN, season={"en": "≈ Sep – Feb", "ar": "≈ سبتمبر – فبراير"})
 
-add(slug="strawberries", cat="fruit", img="strawberries", accent="#C8283C", form="fresh",
+add(slug="strawberries", cat="fruit", img="strawberries-fresh", accent="#C8283C", form="fresh",
  name={"en": "Fresh Egyptian Strawberries", "ar": "الفراولة المصرية الطازجة"},
  tag={"en": "Fresh strawberries for air and sea freight", "ar": "فراولة طازجة للشحن الجوي والبحري"},
  title={"en": "Fresh Egyptian Strawberries Export | Strawberry Supplier | EL-SHIMY", "ar": "تصدير الفراولة المصرية الطازجة | مورّد الفراولة | الشيمي"},
@@ -303,7 +303,7 @@ add(slug="prickly-pear", cat="fruit", img="prickly-pear", accent="#C3417A", form
  packing={"en": "Cartons with padding, palletised; air or sea depending on shelf-life needs.", "ar": "كراتين بحشو واقٍ على بالتات؛ جواً أو بحراً بحسب مدة الصلاحية المطلوبة."},
  season={"en": "≈ Jul – Oct", "ar": "≈ يوليو – أكتوبر"})
 
-add(slug="iqf-strawberries", cat="frozen", img="strawberries", accent="#C8283C", form="frozen",
+add(slug="iqf-strawberries", cat="frozen", img="iqf-strawberries", accent="#C8283C", form="frozen",
  name={"en": "IQF Strawberries", "ar": "الفراولة المجمدة (IQF)"},
  tag={"en": "Individually quick-frozen strawberries for food manufacturers", "ar": "فراولة مجمدة فردياً لمصنّعي الأغذية"},
  title={"en": "IQF Strawberries from Egypt | Frozen Strawberry Supplier | EL-SHIMY", "ar": "فراولة IQF مصرية | مورّد الفراولة المجمدة | الشيمي"},

@@ -299,6 +299,10 @@ def build_credits(lang):
         if not cr: continue
         rows += (f'<tr><th scope="row"><a href="{url("product", lang, p["slug"])}">{esc(p["name"][lang].split(":")[0])}</a></th><td>{esc(cr["artist"])}</td>'
                  f'<td><a href="{cr["license_url"] or cr["source"]}" rel="noopener">{esc(cr["license"])}</a></td><td><a href="{cr["source"]}" rel="noopener">{d["view"]}</a></td></tr>')
+    cr = CREDITS.get("vegetables")
+    if cr:
+        rows = (f'<tr><th scope="row">{ui["veg"]}</th><td>{esc(cr["artist"])}</td><td><a href="{cr["license_url"] or cr["source"]}" rel="noopener">{esc(cr["license"])}</a></td>'
+                f'<td><a href="{cr["source"]}" rel="noopener">{d["view"]}</a></td></tr>') + rows
     head_ = "".join(f"<th scope='col'>{c_}</th>" for c_ in d["cols"])
     body = f'''{visual.hero_lite(lang, bc, d["h1"], d["lead"], cls="hero-compact")}
 <section class="section"><div class="wrap prose"><div class="matrix-wrap" tabindex="0" role="region" aria-label="{d["h1"]}"><table class="cmp"><thead><tr>{head_}</tr></thead><tbody>{rows}</tbody></table></div><p class="note">{d["unsplash"]}</p></div></section>'''

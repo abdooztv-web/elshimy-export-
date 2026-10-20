@@ -427,7 +427,7 @@ def build_home(lang):
 <div class="hero-actions rise">{btn(B.url("contact", lang), ui["quote"])}{btn(B.url("products", lang), ui["view_all"], "ghost-light")}{wa}</div></div><div class="hero-media rise">{mosaic}</div></div></section>
 <section class="strip"><ul class="wrap">{"".join(f"<li>{s}</li>" for s in h["strip"])}</ul></section>'''
     tiles = ""
-    for cat, key, img in (("veg", "veg", None), ("fruit", "fruit", "oranges"), ("frozen", "frozen_cat", "strawberries")):
+    for cat, key, img in (("veg", "veg", "vegetables"), ("fruit", "fruit", "oranges"), ("frozen", "frozen_cat", "strawberries")):
         bg = B.picture(img, "", cls="tile-img", sizes="(min-width:900px) 33vw, 100vw") if img else f'<span class="tile-img tile-plain tile-{cat}"></span>'
         tiles += f'<a class="tile tile-c-{cat} reveal" href="{B.url("products", lang)}?cat={cat}">{bg}<span class="tile-txt"><b>{ui[key]}</b><small>{v["cat_sub"][cat]}</small><span class="more-w">{ui["view_all"]} {arrow()}</span></span></a>'
     cats = f'<section class="section"><div class="wrap">{sec_head(h["cats_h"], h["cats_lead"])}<div class="tiles">{tiles}</div></div></section>'

@@ -1,10 +1,10 @@
 {
  "potatoes": {
-  "title": "Aalugaddalu.JPG",
-  "artist": "Bhaskaranaidu",
-  "license": "CC BY 2.5",
-  "license_url": "https://creativecommons.org/licenses/by/2.5",
-  "source": "https://commons.wikimedia.org/wiki/File:Aalugaddalu.JPG"
+  "title": "Au marché - pommes de terre.JPG",
+  "artist": "Dinkum",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "source": "https://commons.wikimedia.org/wiki/File:Au_march%C3%A9_-_pommes_de_terre.JPG"
  },
  "yellow-onions": {
   "title": "500px photo (39214994).jpeg",
@@ -82,5 +82,26 @@
   "license": "CC BY 2.0",
   "license_url": "https://creativecommons.org/licenses/by/2.0",
   "source": "https://commons.wikimedia.org/wiki/File:Frozen_Raspberries.jpg"
+ },
+ "vegetables": {
+  "title": "A selection of vegetables 01.jpg",
+  "artist": "Rene Cortin",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:A_selection_of_vegetables_01.jpg"
+ },
+ "strawberries-fresh": {
+  "title": "BERRY...BERRY... - Flickr - Have a nice day ^.jpg",
+  "artist": "jo from toyokawa, japan",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:BERRY...BERRY..._-_Flickr_-_Have_a_nice_day_%5E.jpg"
+ },
+ "iqf-strawberries": {
+  "title": "Frozen goodness (6386754543).jpg",
+  "artist": "Bernal Saborio from Costa Rica",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Frozen_goodness_(6386754543).jpg"
  }
 }
